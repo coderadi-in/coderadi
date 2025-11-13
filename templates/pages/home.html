@@ -16,8 +16,34 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
     <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/home.css') }}">
 </head>
 <body>
     {% include 'components/header.html' %}
+
+    <main class="main column gap-50">
+        <section class="hero row h-sb">
+            <div class="text-content column gap-20">
+                <div class="intro column">
+                    <h1 class="h1"><span id="type-1"></span></h1>
+                    <h1 class="h1"><span id="type-2"></span></h1>
+                    <p class="para" id="type-3"></p>
+                </div>
+
+                <div class="cta row gap-10">
+                    <a href="/projects/" class="link btn fl">View my work</a>
+                    <a href="/contact/" class="link btn fl">Get in touch</a>
+                </div>
+            </div>
+
+            <div class="image-content column gap-50">
+                <div class="bar"><img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}" alt="View projects" class="img"></div>
+                <div class="bar"><img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}" alt="View projects" class="img"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="{{ url_for('static', filename='js/pages/home.js') }}"></script>
 </body>
 </html>

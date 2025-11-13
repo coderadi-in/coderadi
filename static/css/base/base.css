@@ -4,7 +4,7 @@
     --background: #0E0E10;
     --surface: #1A1A1D;
 
-    --primary: #1E4EA0;
+    --primary: #4F86C6;
     --secondary: #5863F8;
 
     --text: #E8F1F2;
@@ -221,6 +221,7 @@ body {
 .img {
     width: 100%;
     height: auto;
+    vertical-align: bottom;
 }
 
 .logo {
