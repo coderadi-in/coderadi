@@ -1,0 +1,35 @@
+body {background-color: var(--bg-dark);}
+
+.main {
+    text-align: center;
+    width: 100%;
+}
+
+.content {
+    background-color: var(--bg-dark);
+    color: var(--text-d);
+    text-align: center;
+    padding: 50px;
+}
+
+#error-code {
+    font-size: 10rem;
+    background-image: url('/static/assets/images/hero.png');
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.icon-content {
+    background-color: var(--surface);
+    box-shadow: 0 0 10px #5B86E479;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.ot {
+    color: var(--text-d);
+    border: 1px solid var(--border-d);
+}

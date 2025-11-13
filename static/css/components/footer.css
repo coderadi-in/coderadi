@@ -1,0 +1,29 @@
+.footer {background-color: var(--bg-dark);}
+.footer * {color: var(--text-d);}
+
+.footer .content .main-content,
+.footer .content .social-content {width: 50%;}
+
+.footer .content .h1 {font-family: "Inter", sans-serif;}
+
+.footer .content .contact-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer .contact-info .icon-content {
+    padding: 15px;
+    border-radius: 50px;
+    background-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .footer .content {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .footer .content .main-content,
+    .footer .content .social-content {width: 100%;}
+}

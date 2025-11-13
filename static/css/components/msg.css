@@ -1,0 +1,15 @@
+.alerts {
+    position: absolute;
+    padding: 0 10px;
+    left: 0;
+    top: 85px;
+}
+
+.alert {
+    background-color: var(--bg-dark);
+    color: var(--text-d);
+    padding: 10px;
+    border-radius: 10px;
+    transform: translateX(-110%);
+    transition: all 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
