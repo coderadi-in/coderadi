@@ -19,6 +19,7 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/home.css') }}">
 </head>
 <body>
+    <span class="glowlight" id="top-glowlight"></span>
     {% include 'components/header.html' %}
 
     <main class="main column gap-50">
@@ -31,17 +32,32 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
                 </div>
 
                 <div class="cta row gap-10">
-                    <a href="/projects/" class="link btn fl">View my work</a>
+                    <a href="#skills" class="link btn fl">Checkout my skills</a>
                     <a href="/contact/" class="link btn fl">Get in touch</a>
                 </div>
             </div>
 
             <div class="image-content column gap-50">
-                <div class="bar"><img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}" alt="View projects" class="img"></div>
-                <div class="bar"><img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}" alt="View projects" class="img"></div>
+                <div class="bar" style="--top-offset: 70px; --delay: 0ms;">
+                    <img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}" alt="View projects" class="img">
+                </div>
+
+                <div class="bar" style="--top-offset: -70px; --delay: 200ms;">
+                    <img src="{{ url_for('static', filename='assets/images/auvora-thumbnail.png') }}" alt="Checkout Auvora" class="img">
+                </div>
+            </div>
+        </section>
+
+        <section class="skills cplumn gap-20" id="skills">
+            <h1 class="h1">Skills overview</h1>
+
+            <div class="skills-row row h-se gap-20">
+                
             </div>
         </section>
     </main>
+
+    <span class="glowlight" id="bottom-glowlight"></span>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="{{ url_for('static', filename='js/pages/home.js') }}"></script>

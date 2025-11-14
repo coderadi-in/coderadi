@@ -1,5 +1,10 @@
+@keyframes barMotion {
+    0%, 100% {top: var(--top-offset);}
+    50% {top: calc(var(--top-offset) + 30px);}
+}
+
 #highlight {
-    background-image: linear-gradient(135deg, #5863F8, #059669, #D05C5C);
+    background-image: linear-gradient(135deg, #226CE0, #5863F8);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -14,22 +19,65 @@
     left: 0;
     z-index: -1;
     filter: blur(8px);
-    background-image: linear-gradient(135deg, #5863F8, #059669, #D05C5C);
+    background-image: linear-gradient(135deg, #226CE0, #5863F8);
     -webkit-background-clip: text;
     background-clip: text;
 }
 
-.hero {height: 100vh;}
+.glowlight {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+#top-glowlight {
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        circle at top left,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
+#bottom-glowlight {
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(
+        circle at bottom right,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
+.hero {
+    height: 100vh;
+    padding: 50px;
+}
 
 .hero .text-content,
 .hero .image-content {width: 50%;}
 
 .hero .text-content .h1 {font-size: 5rem;}
+.hero .text-content .btn:hover {box-shadow: 0 0 15px var(--primary);}
 
 .hero .image-content .bar {
     transform: rotate(-30deg) skew(25deg) translate(0, 0);
     box-shadow: -20px 15px 20px var(--border);
     position: relative;
+    top: var(--top-offset);
+    animation: barMotion 5s linear(0, 0.0146, 0.0548, 0.1153, 0.1911, 0.2776, 0.3706, 0.4665, 0.562, 0.6545, 0.7419, 0.8225, 0.8951, 0.9589, 1.0137, 1.0591, 1.0956, 1.1235, 1.1434, 1.156, 1.1621, 1.1626, 1.1585, 1.1505, 1.1396, 1.1264, 1.1118, 1.0964, 1.0807, 1.0653, 1.0505, 1.0367, 1.0241, 1.0128, 1.003, 0.9946, 0.9878, 0.9824, 0.9784, 0.9757, 0.9741, 0.9734, 0.9737, 0.9746, 0.9761, 0.9781, 0.9803, 0.9828, 0.9853, 0.9878, 0.9903, 0.9927, 0.9949, 0.9968, 0.9986, 1.0001, 1.0013, 1.0024, 1.0032, 1.0037, 1.0041, 1.0043, 1.0043, 1.0042, 1.0041, 1.0038, 1.0034, 1.0031, 1.0026, 1.0022, 1.0018, 1.0014, 1.001, 1.0007, 1.0004, 1.0001, 0.9999, 0.9997, 0.9996, 0.9994, 0.9994, 0.9993, 0.9993, 0.9993, 0.9993, 0.9994, 0.9994, 0.9995, 0.9995, 0.9996, 0.9997, 0.9997, 0.9998, 0.9999, 0.9999, 1, 1, 1, 1.0001, 1.0001, 1) infinite;
+    animation-delay: var(--delay);
+}
+
+.hero .image-content .bar:first-child {
+    z-index: 1;
+    left: 20px;
 }
 
 .hero .image-content .bar::before {
@@ -39,6 +87,7 @@
     height: 100%;
     transform: rotate(0deg) skewY(-45deg) translate(-20px, -10px);
     background-color: var(--border);
+    transition: all 0.4s;
 }
 
 .hero .image-content .bar::after {
@@ -50,4 +99,8 @@
     top: 100%;
     left: -10px;
     transform: skewX(-45deg);
+    transition: all 0.4s;
 }
+
+.hero .image-content .bar:hover::before,
+.hero .image-content .bar:hover::after {background-color: var(--primary);}

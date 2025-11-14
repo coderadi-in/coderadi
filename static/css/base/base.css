@@ -4,7 +4,7 @@
     --background: #0E0E10;
     --surface: #1A1A1D;
 
-    --primary: #4F86C6;
+    --primary: #226CE0;
     --secondary: #5863F8;
 
     --text: #E8F1F2;
@@ -123,33 +123,9 @@ body {
 
 .btn {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
-}
-
-.btnl {
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-}
-
-.btnlr {
-    padding: 10px 20px;
-    border-radius: 50px;
-    border: none;
-}
-
-.btnxl {
-    padding: 20px 50px;
-    border-radius: 10px;
-    border: none;
-}
-
-.btnxlr {
-    padding: 20px 50px;
-    border-radius: 50px;
-    border: none;
 }
 
 .icon-ot {
