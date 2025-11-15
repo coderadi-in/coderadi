@@ -64,25 +64,25 @@ function render_skill_chart() {
     })
 }
 
-// & ELEMENT OBSERVER SCRIPT
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if (entry.target.classList.contains('projects')) {
-                display_projects();
-            }
-        }
-    });
-}, {
-    root: null,
-    threshold: 0.2
-});
+// // & ELEMENT OBSERVER SCRIPT
+// const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             if (entry.target.classList.contains('skill')) {
+//                 display_projects();
+//             }
+//         }
+//     });
+// }, {
+//     root: null,
+//     threshold: 0.2
+// });
 
-// & SCRIPT TO USE THE OBSERVER TO OBSERVE .SECTION
-sections = document.querySelectorAll(".main section");
-sections.forEach((section) => {
-    observer.observe(section);
-})
+// // & SCRIPT TO USE THE OBSERVER TO OBSERVE .SECTION
+// sections = document.querySelectorAll(".main section");
+// sections.forEach((section) => {
+//     observer.observe(section);
+// })
 
 // * FUNCTION TO HIDE SKILL DESCRIPTIONS
 function hideSkillDesc() {

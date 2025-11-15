@@ -15,7 +15,7 @@
 }
 
 .glowlight {
-    position: absolute;
+    position: fixed;
     width: max(250px, 20vw);
     height: max(250px, 20vw);
     pointer-events: none;
@@ -155,7 +155,7 @@
     border-radius: 8px;
 }
 
-.skills .skill-display .tag {
+.skills .tag {
     padding: 5px 10px;
     background-color: #5863F8A0;
     border-radius: 50px;
