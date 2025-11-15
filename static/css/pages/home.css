@@ -3,6 +3,8 @@
     50% {top: calc(var(--top-offset) + 30px);}
 }
 
+/* | BASE */
+
 #highlight {
     background-image: linear-gradient(135deg, #226CE0, #5863F8);
     -webkit-background-clip: text;
@@ -42,6 +44,8 @@
         transparent 80%
     );
 }
+
+/* | HERO SECTION */
 
 .hero {
     height: 100vh;
@@ -92,3 +96,83 @@
 
 .hero .image-content .bar:hover::before,
 .hero .image-content .bar:hover::after {background-color: var(--primary);}
+
+/* | SKILLS SECTION */
+.skills .skill-display {
+    background-image: url('/static/assets/images/skill-bg.png');
+    transform: rotate(-30deg) skew(25deg) translate(0, 0);
+    position: relative;
+    background-size: cover;
+    aspect-ratio: 16 / 9;
+    padding: 15px;
+    justify-content: end;
+    height: 250px;
+    box-shadow: -20px 15px 20px var(--border);
+}
+
+.skills .skill-display::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    transform: rotate(0deg) skewY(-45deg) translate(-35px, -10px);
+    background-color: var(--border);
+    transition: all 0.4s;
+}
+
+.skills .skill-display::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: var(--border);
+    top: 100%;
+    left: -10px;
+    transform: skewX(-45deg);
+    transition: all 0.4s;
+}
+
+.skills .skill-display:nth-child(1) {
+    top: 150px;
+    z-index: 2;
+}
+
+.skills .skill-display:nth-child(2) {
+    z-index: 1;
+}
+
+.skills .skill-display:nth-child(3) {
+    top: -150px;
+    z-index: 0;
+}
+
+.skills .skill-display:hover::before,
+.skills .skill-display:hover::after {background-color: var(--primary);}
+
+.skills .skill-display .h3 {
+    background-color: #1A1A1DA0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.skills .skill-display .tag {
+    padding: 5px 10px;
+    background-color: #5863F8A0;
+    border-radius: 50px;
+}
+
+.skills .right {
+    width: 100%;
+    height: 50vh;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+}
+
+.skills .right .desc {
+    opacity: 0;
+    display: none;
+}
+
+/* .skills .right .desc .h1 {transform: translateY(-100%);}
+.skills .right .desc .content * {transform: translateY(100%);} */

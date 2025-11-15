@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,19 @@
     <meta name="author" content="coderadi">
     <meta name="theme-color" content="#0E0E10">
     <!-- <meta name="google-site-verification" content="your_verification_code"> -->
-    <meta name="keywords" content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, flet">
+    <meta name="keywords"
+        content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, flet">
 
     <meta name="description" content="coderadi &bull; driven by code.
 Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
-    
+
     <title>coderadi</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/home.css') }}">
 </head>
+
 <body>
     <span class="glowlight" id="top-glowlight"></span>
     {% include 'components/header.html' %}
@@ -39,20 +42,110 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
 
             <div class="image-content column gap-50">
                 <div class="bar" style="--top-offset: 70px; --delay: 0ms;">
-                    <img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}" alt="View projects" class="img">
+                    <img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}"
+                        alt="View projects" class="img">
                 </div>
 
                 <div class="bar" style="--top-offset: -70px; --delay: 200ms;">
-                    <img src="{{ url_for('static', filename='assets/images/auvora-thumbnail.png') }}" alt="Checkout Auvora" class="img">
+                    <img src="{{ url_for('static', filename='assets/images/auvora-thumbnail.png') }}"
+                        alt="Checkout Auvora" class="img">
                 </div>
             </div>
         </section>
 
         <section class="skills cplumn gap-20" id="skills">
-            <h1 class="h1">Skills overview</h1>
+            <h1 class="h1">My skills</h1>
 
-            <div class="skills-row row h-se gap-20">
-                
+            <div class="row gap-50">
+                <div class="left column gap-20">
+                    <div class="skill-display column gap-10 frontend">
+                        <h3 class="h3">Frontend dev.</h3>
+
+                        <ul class="list row gap-10">
+                            <li class="tag"><span class="text">HTML</span></li>
+                            <li class="tag"><span class="text">CSS</span></li>
+                            <li class="tag"><span class="text">JS</span></li>
+                            <li class="tag"><span class="text">Flet</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-display column gap-10 backend">
+                        <h3 class="h3">Backend dev.</h3>
+
+                        <ul class="list row gap-10">
+                            <li class="tag"><span class="text">Python</span></li>
+                            <li class="tag"><span class="text">NodeJS</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-display column gap-10 data-science">
+                        <h3 class="h3">Data science</h3>
+
+                        <ul class="list row gap-10">
+                            <li class="tag"><span class="text">Python</span></li>
+                            <li class="tag"><span class="text">Pandas</span></li>
+                            <li class="tag"><span class="text">NumPy</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <span class="text" id="hover">Hover any bar to get its description.</span>
+                    <div class="desc column gap-20" id="frontend">
+                        <div class="h1">Frontend dev.</div>
+
+                        <div class="content column gap-10">
+                            <p class="para">I specialize in building fast, modern, and visually polished frontend
+                                experiences that feel effortless for users and valuable for businesses. With a strong
+                                focus on clean UI, smooth interactions, and pixel-level attention to detail, I turn
+                                ideas into interfaces that not only look great but actually convert. My approach is
+                                simple: understand the goal deeply, and craft a frontend that communicates, engages, and
+                                performs.</p>
+
+                            <ul class="list row gap-10">
+                                <li class="tag"><span class="text">HTML</span></li>
+                                <li class="tag"><span class="text">CSS</span></li>
+                                <li class="tag"><span class="text">JS</span></li>
+                                <li class="tag"><span class="text">Flet</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="desc column gap-20" id="backend">
+                        <div class="h1">Backend dev.</div>
+
+                        <div class="content column gap-10">
+                            <p class="para">I develop backend systems that are robust, secure, and engineered to handle
+                                real business operations with reliability. My focus is on building architectures that
+                                run smoothly behind the scenes—APIs that respond fast, databases that scale
+                                effortlessly, and server logic that keeps everything stable no matter the load. I work
+                                with modern tools and frameworks to ensure every backend I deliver is optimized,
+                                maintainable, and ready for long-term growth.</p>
+                        </div>
+
+                        <ul class="list row gap-10">
+                            <li class="tag"><span class="text">HTML</span></li>
+                            <li class="tag"><span class="text">CSS</span></li>
+                            <li class="tag"><span class="text">JS</span></li>
+                            <li class="tag"><span class="text">Flet</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="desc column gap-20" id="data-science">
+                        <div class="h1">Data science</div>
+
+                        <p class="para">I don't have any good point here to write, I'm <i>currently learning it</i>.
+                            Well, for now, I've completed <strong>NumPy</strong> and <strong>Pandas</strong>. That's it,
+                            after completed this, I'll build awesome projects that'll represent my technical skills in
+                            the best possible ways.</p>
+
+                        <ul class="list row gap-10">
+                            <li class="tag"><span class="text">Python</span></li>
+                            <li class="tag"><span class="text">Pandas</span></li>
+                            <li class="tag"><span class="text">NumPy</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -60,6 +153,8 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
     <span class="glowlight" id="bottom-glowlight"></span>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ url_for('static', filename='js/pages/home.js') }}"></script>
 </body>
+
 </html>
