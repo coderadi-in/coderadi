@@ -5,6 +5,11 @@
 
 /* | BASE */
 
+.skill-display.show {
+    transform: rotate(-30deg) skew(25deg) translate(0, 0) !important;
+    opacity: 1 !important;
+}
+
 #highlight {
     background-image: linear-gradient(135deg, #226CE0, #5863F8);
     -webkit-background-clip: text;
@@ -100,7 +105,7 @@
 /* | SKILLS SECTION */
 .skills .skill-display {
     background-image: url('/static/assets/images/skill-bg.png');
-    transform: rotate(-30deg) skew(25deg) translate(0, 0);
+    transform: rotate(-30deg) skew(25deg) translate(-100%, 100%);
     position: relative;
     background-size: cover;
     aspect-ratio: 16 / 9;
@@ -108,6 +113,8 @@
     justify-content: end;
     height: 250px;
     box-shadow: -20px 15px 20px var(--border);
+    opacity: 0;
+    transition: transform 1.6s linear(0, 0.0104, 0.039, 0.0823, 0.137, 0.2002, 0.2692, 0.3417, 0.4156, 0.4892, 0.5611, 0.6301, 0.6953, 0.756, 0.8117, 0.8621, 0.9071, 0.9466, 0.9807, 1.0097, 1.0337, 1.0531, 1.0683, 1.0797, 1.0875, 1.0924, 1.0946, 1.0945, 1.0925, 1.089, 1.0843, 1.0786, 1.0723, 1.0655, 1.0586, 1.0516, 1.0447, 1.038, 1.0316, 1.0257, 1.0202, 1.0152, 1.0107, 1.0067, 1.0032, 1.0003, 0.9978, 0.9957, 0.9941, 0.9929, 0.992, 0.9914, 0.9911, 0.991, 0.9911, 0.9914, 0.9918, 0.9923, 0.9929, 0.9935, 0.9941, 0.9948, 0.9955, 0.9961, 0.9967, 0.9973, 0.9979, 0.9984, 0.9988, 0.9992, 0.9996, 0.9999, 1.0001, 1.0003, 1.0005, 1.0006, 1.0007, 1.0008, 1.0008, 1.0009, 1.0008, 1.0008, 1.0008, 1.0008, 1.0007, 1.0006, 1.0006, 1.0005, 1.0005, 1.0004, 1.0003, 1.0003, 1.0002, 1.0002, 1.0001, 1.0001, 1.0001, 1, 1, 1, 1);
 }
 
 .skills .skill-display::before {

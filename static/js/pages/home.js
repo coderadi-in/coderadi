@@ -40,49 +40,36 @@ var typed = new Typed('#type-1', {
     }
 });
 
-// * CHART INTEGRATION SCRIPT
-function render_skill_chart() {
-    const ctx = document.querySelector("#skills-chart").getContext('2d');
-    const chart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['HTML', 'CSS', 'JS', 'Flask', 'Flet'],
-            datasets: [{
-                label: 'My skillset',
-                data: [20, 25, 10, 35, 10],
-                backgroundColor: [
-                    "#22E06C",
-                    "#226CE0",
-                    "#E0226C",
-                    "#E0E06C",
-                    "#5863F8",
-                ],
-                borderColor: "transparent",
-                hoverOffset: 5
-            }]
-        }
-    })
+// * SKILLBARS DISPLAY ANIMATION SCRIPT
+function displaySkillBars(index=0) {
+    if (index >= skillBars.length) {return;}
+
+    skillBars[index].classList.add('show');
+
+    setTimeout(() => {
+        displaySkillBars(index+1);
+    }, 100);
 }
 
-// // & ELEMENT OBSERVER SCRIPT
-// const observer = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             if (entry.target.classList.contains('skill')) {
-//                 display_projects();
-//             }
-//         }
-//     });
-// }, {
-//     root: null,
-//     threshold: 0.2
-// });
+// & ELEMENT OBSERVER SCRIPT
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (entry.target.classList.contains('skills')) {
+                displaySkillBars();
+            }
+        }
+    });
+}, {
+    root: null,
+    threshold: 0.2
+});
 
-// // & SCRIPT TO USE THE OBSERVER TO OBSERVE .SECTION
-// sections = document.querySelectorAll(".main section");
-// sections.forEach((section) => {
-//     observer.observe(section);
-// })
+// & SCRIPT TO USE THE OBSERVER TO OBSERVE .SECTION
+sections = document.querySelectorAll(".main section");
+sections.forEach((section) => {
+    observer.observe(section);
+})
 
 // * FUNCTION TO HIDE SKILL DESCRIPTIONS
 function hideSkillDesc() {
