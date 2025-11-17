@@ -53,99 +53,67 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
             </div>
         </section>
 
-        <section class="skills cplumn gap-20" id="skills">
+        <section class="skills column gap-20" id="skills">
             <h1 class="h1">My skills</h1>
 
+            <ul class="list column gap-10">
+                <li class="row gap-10">
+                    <span class="color e"></span>
+                    <span class="text">Expertise</span>
+                </li>
+                <li class="row gap-10">
+                    <span class="color w"></span>
+                    <span class="text">Weak</span>
+                </li>
+            </ul>
+
             <div class="row gap-50">
-                <div class="left column gap-20">
-                    <div class="skill-display column gap-10 frontend">
-                        <h3 class="h3">Frontend dev.</h3>
-
-                        <ul class="list row gap-10">
-                            <li class="tag"><span class="text">HTML</span></li>
-                            <li class="tag"><span class="text">CSS</span></li>
-                            <li class="tag"><span class="text">JS</span></li>
-                            <li class="tag"><span class="text">Flet</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-display column gap-10 backend">
-                        <h3 class="h3">Backend dev.</h3>
-
-                        <ul class="list row gap-10">
-                            <li class="tag"><span class="text">Python</span></li>
-                            <li class="tag"><span class="text">NodeJS</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-display column gap-10 data-science">
-                        <h3 class="h3">Data science</h3>
-
-                        <ul class="list row gap-10">
-                            <li class="tag"><span class="text">Python</span></li>
-                            <li class="tag"><span class="text">Pandas</span></li>
-                            <li class="tag"><span class="text">NumPy</span></li>
-                        </ul>
-                    </div>
+                <div class="skill-show column gap-20">
+                    <h3 class="h3">Frontend dev.</h3>
+                    <p class="para">I can build responsive frontend for any software or website for almost any device and any screen.</p>
+                    
+                    <ul class="list row gap-10">
+                        <li><span class="tag text e">HTML</span></li>
+                        <li><span class="tag text e">CSS</span></li>
+                        <li><span class="tag text e">JS</span></li>
+                        <li><span class="tag text w">Flet</span></li>
+                    </ul>
                 </div>
+                
+                <div class="skill-show column gap-20">
+                    <h3 class="h3">Backend dev.</h3>
+                    <p class="para">I build web-servers or backend for mainly websites, but it can work for other software too.</p>
 
-                <div class="right">
-                    <span class="text" id="hover">Click any bar to get its description.</span>
-                    <div class="desc column gap-20" id="frontend">
-                        <div class="h1">Frontend dev.</div>
-
-                        <div class="content column gap-10">
-                            <p class="para">I specialize in building fast, modern, and visually polished frontend
-                                experiences that feel effortless for users and valuable for businesses. With a strong
-                                focus on clean UI, smooth interactions, and pixel-level attention to detail, I turn
-                                ideas into interfaces that not only look great but actually convert. My approach is
-                                simple: understand the goal deeply, and craft a frontend that communicates, engages, and
-                                performs.</p>
-
-                            <ul class="list row gap-10">
-                                <li class="tag"><span class="text">HTML</span></li>
-                                <li class="tag"><span class="text">CSS</span></li>
-                                <li class="tag"><span class="text">JS</span></li>
-                                <li class="tag"><span class="text">Flet</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="desc column gap-20" id="backend">
-                        <div class="h1">Backend dev.</div>
-
-                        <div class="content column gap-10">
-                            <p class="para">I develop backend systems that are robust, secure, and engineered to handle
-                                real business operations with reliability. My focus is on building architectures that
-                                run smoothly behind the scenes—APIs that respond fast, databases that scale
-                                effortlessly, and server logic that keeps everything stable no matter the load. I work
-                                with modern tools and frameworks to ensure every backend I deliver is optimized,
-                                maintainable, and ready for long-term growth.</p>
-                        </div>
-
-                        <ul class="list row gap-10">
-                            <li class="tag"><span class="text">HTML</span></li>
-                            <li class="tag"><span class="text">CSS</span></li>
-                            <li class="tag"><span class="text">JS</span></li>
-                            <li class="tag"><span class="text">Flet</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="desc column gap-20" id="data-science">
-                        <div class="h1">Data science</div>
-
-                        <p class="para">I don't have any good point here to write, I'm <i>currently learning it</i>.
-                            Well, for now, I've completed <strong>NumPy</strong> and <strong>Pandas</strong>. That's it,
-                            after completed this, I'll build awesome projects that'll represent my technical skills in
-                            the best possible ways.</p>
-
-                        <ul class="list row gap-10">
-                            <li class="tag"><span class="text">Python</span></li>
-                            <li class="tag"><span class="text">Pandas</span></li>
-                            <li class="tag"><span class="text">NumPy</span></li>
-                        </ul>
-                    </div>
+                    <ul class="list row gap-10">
+                        <li><span class="tag text e">Flask</span></li>
+                        <li><span class="tag text w">NodeJS</span></li>
+                    </ul>
                 </div>
+                
+                <div class="skill-show column gap-20">
+                    <h3 class="h3">Data science</h3>
+                    <p class="para">I'm currently learning Data Science, after learning I'll build mini AI tools & company specific chatbots.</p>
+
+                    <ul class="list row gap-10">
+                        <li><span class="tag text e">Python</span></li>
+                        <li><span class="tag text w">Pandas</span></li>
+                        <li><span class="tag text w">NumPy</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row h-sb gap-20" id="langs">
+                <ui class="list row gap-10">
+                    <li><img src="{{ url_for('static', filename='assets/icons/python.png') }}" alt="python" loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/html.png') }}" alt="html" loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/css.png') }}" alt="css" loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/js.png') }}" alt="js" loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/flask.png') }}" alt="flask" loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/flet.png') }}" alt="flet" loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/nodejs.png') }}" alt="nodejs" loading="lazy" class="icon"></li>
+                </ui>
+
+                <h3 class="h3">Languages & frameworks</h3>
             </div>
         </section>
     </main>
