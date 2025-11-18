@@ -112,7 +112,7 @@ body {
 .section {padding: 50px;}
 
 .divider {
-    border: 1px solid var(--border-d);
+    border: 1px solid var(--border);
 }
 
 @media (max-width: 568px) {
@@ -132,7 +132,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid var(--border-l);
+    border: 1px solid var(--border);
 }
 
 .icon-fl {
@@ -144,51 +144,34 @@ body {
 
 .ot {
     background-color: transparent;
-    border: 1px solid var(--border-l);
+    border: 1px solid var(--border);
 }
 
 .fl {
     background-color: var(--primary);
-    color: var(--text-d) !important;
+    color: var(--text) !important;
 }
 
 .disabled {
-    background-color: var(--border-l);
-    color: var(--text-d) !important;
+    background-color: var(--border);
+    color: var(--text) !important;
 }
 
 /* -- DYNAMICS -- */
 
-.link, .link-l {
+.link {
     font-weight: normal;
     font-size: var(--f1);
     font-family: "Inter", sans-serif;
-    color: var(--text-l);
+    color: var(--text);
     text-decoration: none;
 }
 
-.link-d {
+.ulink {
     font-weight: normal;
     font-size: var(--f1);
     font-family: "Inter", sans-serif;
-    color: var(--text-d);
-    text-decoration: none;
-}
-
-.ulink-l {
-    font-weight: normal;
-    font-size: var(--f1);
-    font-family: "Inter", sans-serif;
-    color: var(--text-l);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-.link-d {
-    font-weight: normal;
-    font-size: var(--f1);
-    font-family: "Inter", sans-serif;
-    color: var(--text-d);
+    color: var(--text);
     text-decoration: underline;
     text-underline-offset: 2px;
 }
@@ -213,7 +196,7 @@ body {
 label {font-family: "Inter", sans-serif;}
 
 .input {
-    border: 1px solid var(--border-l);
+    border: 1px solid var(--border);
     background-color: transparent;
     font-family: "Inter", sans-serif;
     outline: none;

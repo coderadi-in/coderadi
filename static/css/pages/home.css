@@ -53,7 +53,27 @@
 .hero .image-content {width: 50%;}
 
 .hero .text-content .h1 {font-size: 5rem;}
-.hero .text-content .btn:hover {box-shadow: 0 0 15px var(--primary);}
+.hero .text-content .btn.fl:hover {box-shadow: 0 0 15px var(--primary);}
+.hero .text-content .btn.ot {position: relative;}
+
+.hero .text-content .btn.ot::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    z-index: -1;
+    background-color: var(--secondary);
+    clip-path: circle(0% at 50% 50%);
+    transition: all 0.5s;
+}
+
+.hero .text-content .btn.ot:hover::before {
+    clip-path: circle(100% at 50% 50%);
+    box-shadow: 0 0 10px var(--secondary);
+}
 
 .hero .image-content .bar {
     transform: rotate(-30deg) skew(25deg) translate(0, 0);
@@ -172,6 +192,11 @@
     padding: 10px;
     border-radius: 8px;
     background-color: var(--background);
+}
+
+.cta {
+    background-color: var(--surface);
+    text-align: center;
 }
 
 @media (max-width: 1024px) {
