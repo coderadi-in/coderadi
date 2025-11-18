@@ -43,12 +43,12 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
             <div class="image-content column gap-50">
                 <div class="bar" style="--top-offset: 70px; --delay: 0ms;">
                     <img src="{{ url_for('static', filename='assets/images/projects-thumbnail.png') }}"
-                        alt="View projects" class="img">
+                        alt="View projects" class="img" loading="lazy">
                 </div>
 
                 <div class="bar" style="--top-offset: -70px; --delay: 200ms;">
                     <img src="{{ url_for('static', filename='assets/images/auvora-thumbnail.png') }}"
-                        alt="Checkout Auvora" class="img">
+                        alt="Checkout Auvora" class="img" loading="lazy">
                 </div>
             </div>
         </section>
@@ -103,7 +103,7 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
             </div>
 
             <div class="row h-sb gap-20" id="langs">
-                <ui class="list res-row gap-10">
+                <ul class="list res-row gap-10">
                     <li><img src="{{ url_for('static', filename='assets/icons/python.png') }}" alt="python" loading="lazy" class="icon"></li>
                     <li><img src="{{ url_for('static', filename='assets/icons/html.png') }}" alt="html" loading="lazy" class="icon"></li>
                     <li><img src="{{ url_for('static', filename='assets/icons/css.png') }}" alt="css" loading="lazy" class="icon"></li>
@@ -111,37 +111,37 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
                     <li><img src="{{ url_for('static', filename='assets/icons/flask.png') }}" alt="flask" loading="lazy" class="icon"></li>
                     <li><img src="{{ url_for('static', filename='assets/icons/flet.png') }}" alt="flet" loading="lazy" class="icon"></li>
                     <li><img src="{{ url_for('static', filename='assets/icons/nodejs.png') }}" alt="nodejs" loading="lazy" class="icon"></li>
-                </ui>
+                </ul>
 
                 <h3 class="h3">Languages & frameworks</h3>
             </div>
 
             <div class="grid gap-20" id="tech">
                 <div class="tool column gap-10">
-                    <ui class="list row gap-10">
+                    <ul class="list row gap-10">
                         <li><img src="{{ url_for('static', filename='assets/icons/git.png') }}" alt="GitHub" class="icon"></li>
                         <li><img src="{{ url_for('static', filename='assets/icons/vs-code.png') }}" alt="VS Code" class="icon"></li>
-                    </ui>
+                    </ul>
 
                     <h3 class="h3">Dev. workspace</h3>
                     <p class="para">I use VS code and GitHub for development and version control. With this combo, I can build and update the code in collaborative space also.</p>
                 </div>
 
                 <div class="tool column gap-10">
-                    <ui class="list row gap-10">
+                    <ul class="list row gap-10">
                         <li><img src="{{ url_for('static', filename='assets/icons/mysql.png') }}" alt="MySQL" class="icon"></li>
                         <li><img src="{{ url_for('static', filename='assets/icons/sqlite.png') }}" alt="SQLite" class="icon"></li>
-                    </ui>
+                    </ul>
 
                     <h3 class="h3">Database integration</h3>
                     <p class="para">I use MySQL for large sized and production standard projects, and SQLite for mid/small sized projects as it provides flexibility at low level.</p>
                 </div>
 
                 <div class="tool column gap-10">
-                    <ui class="list row gap-10">
+                    <ul class="list row gap-10">
                         <li><img src="{{ url_for('static', filename='assets/icons/figma.png') }}" alt="Figma" class="icon"></li>
                         <li><img src="{{ url_for('static', filename='assets/icons/stitch.png') }}" alt="Stitch AI" class="icon"></li>
-                    </ui>
+                    </ul>
 
                     <h3 class="h3">Frontend designing</h3>
                     <p class="para">I use Figma and Stitch AI to design the frontend for any site or any app. These tools are industry standard and use by almost all frontend devs.</p>
