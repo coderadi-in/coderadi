@@ -4,6 +4,7 @@
 }
 
 /* | BASE */
+.main section {padding: 50px;}
 #highlight {
     background-image: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
@@ -46,10 +47,7 @@
 
 /* | HERO SECTION */
 
-.hero {
-    height: 100vh;
-    padding: 50px;
-}
+.hero {height: 100vh;}
 
 .hero .text-content,
 .hero .image-content {width: 50%;}
@@ -97,6 +95,11 @@
 .hero .image-content .bar:hover::after {background-color: var(--primary);}
 
 /* | SKILLS SECTION */
+.skills .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .skills .skill-show {
     padding: 20px;
     border-radius: 10px;
@@ -124,6 +127,7 @@
 
 .skills #langs {
     position: relative;
+    flex-wrap: wrap-reverse;
     padding: 15px;
     border-radius: 8px;
     background-color: var(--background);
@@ -168,4 +172,30 @@
     padding: 10px;
     border-radius: 8px;
     background-color: var(--background);
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        align-items: start;
+        height: auto;
+        gap: 50px;
+    }
+    
+    .hero .text-content,
+    .hero .image-content {width: 100%;}
+
+    .hero .image-content {align-items: center;}
+    .hero .image-content .bar {width: max(60%, 250px);}
+
+    .skills .grid {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (max-width: 768px) {
+    .hero .image-content {gap: 100px;}
+}
+
+@media (max-width: 568px) {
+    .main section {padding: 20px;}
+    .skills .grid {grid-template-columns: repeat(1, 1fr);}
 }

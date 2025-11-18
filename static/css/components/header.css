@@ -21,7 +21,15 @@
     to {transform: translateX(0);}
 }
 
-.bar {
+.menu-btn {
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .bar,
+.sidebar .bar {
     width: 20px;
     height: 2px;
     background-color: var(--text);
@@ -98,6 +106,10 @@
 .sidebar .options {height: 100%;}
 .sidebar .list .link {color: var(--text);}
 .sidebar #cta {text-align: center;}
+
+@media (max-width: 1024px) {
+    .header {position: static;}
+}
 
 @media (max-width: 768px) {
     .header .menu-btn {display: flex;}
