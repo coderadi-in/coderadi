@@ -63,11 +63,11 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
                 </li>
                 <li class="row gap-10">
                     <span class="color w"></span>
-                    <span class="text">Weak</span>
+                    <span class="text">Familiar</span>
                 </li>
             </ul>
 
-            <div class="row gap-50">
+            <div class="row gap-20">
                 <div class="skill-show column gap-20">
                     <h3 class="h3">Frontend dev.</h3>
                     <p class="para">I can build responsive frontend for any software or website for almost any device and any screen.</p>
@@ -115,7 +115,41 @@ Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
 
                 <h3 class="h3">Languages & frameworks</h3>
             </div>
+
+            <div class="row gap-20" id="tech">
+                <div class="tool column gap-10">
+                    <ui class="list row gap-10">
+                        <li><img src="{{ url_for('static', filename='assets/icons/git.png') }}" alt="GitHub" class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/vs-code.png') }}" alt="VS Code" class="icon"></li>
+                    </ui>
+
+                    <h3 class="h3">Dev. workspace</h3>
+                    <p class="para">I use VS code and GitHub for development and version control. With this combo, I can build and update the code in collaborative space also.</p>
+                </div>
+
+                <div class="tool column gap-10">
+                    <ui class="list row gap-10">
+                        <li><img src="{{ url_for('static', filename='assets/icons/mysql.png') }}" alt="MySQL" class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/sqlite.png') }}" alt="SQLite" class="icon"></li>
+                    </ui>
+
+                    <h3 class="h3">Database integration</h3>
+                    <p class="para">I use MySQL for large sized and production standard projects, and SQLite for mid/small sized projects as it provides flexibility at low level.</p>
+                </div>
+
+                <div class="tool column gap-10">
+                    <ui class="list row gap-10">
+                        <li><img src="{{ url_for('static', filename='assets/icons/figma.png') }}" alt="Figma" class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/stitch.png') }}" alt="Stitch AI" class="icon"></li>
+                    </ui>
+
+                    <h3 class="h3">Frontend designing</h3>
+                    <p class="para">I use Figma and Stitch AI to design the frontend for any site or any app. These tools are industry standard and use by almost all frontend devs.</p>
+                </div>
+            </div>
         </section>
+
+        
     </main>
 
     <span class="glowlight" id="bottom-glowlight"></span>
