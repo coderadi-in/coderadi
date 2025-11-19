@@ -1,8 +1,9 @@
-// ? GETTING BUTTONS ELEMENTS
+// ? GETTING SIDEBAR ELEMENTS
 const menuBtn = document.querySelector('.header .menu-btn');
 const bar1 = document.querySelector('.header .bar1');
 const bar2 = document.querySelector('.header .bar2');
 const sidebar = document.querySelector('.sidebar');
+const slideBtn = document.querySelector("#slide-nav");
 
 // * NAVIGATION BAR TOGGLE SCRIPT
 function toggle_sidebar() {    
@@ -30,7 +31,11 @@ function toggle_sidebar() {
 // & SIDEBAR BUTTON LISTENING SCIRPT
 document.addEventListener('click', (e) => {
     if (e.target.closest('.menu-btn')) {
-        console.log('toggling');
         toggle_sidebar();
     }
+})
+
+// & SLIDE BUTTON LISTENING SCRIPT
+slideBtn.addEventListener('click', () => {
+    toggle_sidebar();
 })

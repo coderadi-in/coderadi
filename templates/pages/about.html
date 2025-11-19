@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+    <meta name="author" content="coderadi">
+    <meta name="theme-color" content="#0E0E10">
+    <!-- <meta name="google-site-verification" content="your_verification_code"> -->
+
+    <meta name="description" content="coderadi &bull; driven by code.
+Welcome to my portfolio. I'm a dedicated software developer & entrepreneur.">
+
     <title>About me &bull; coderadi</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/about.css') }}">
 </head>
 <body>
-    
+    {% include 'components/header.html' %}
+
+    <main class="main column gap-50">
+        
+    </main>
 </body>
 </html>

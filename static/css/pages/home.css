@@ -197,6 +197,8 @@
 .cta {
     background-color: var(--surface);
     text-align: center;
+    margin: 20px;
+    border-radius: 20px;
 }
 
 @media (max-width: 1024px) {
@@ -222,5 +224,19 @@
 
 @media (max-width: 568px) {
     .main section {padding: 20px;}
+
+    .hero .image-content .bar:first-child {--top-offset: 60px !important;}
+    .hero .image-content .bar:last-child {--top-offset: -60px !important;}
+
+    .hero .image-content .bar::before {
+        transform: rotate(0deg) skewY(-45deg) translate(-10px, -5px);
+        width: 10px;
+    }
+
+    .hero .image-content .bar::after {
+        transform: skewX(-45deg) translateX(5px);
+        height: 10px;
+    }
+
     .skills .grid {grid-template-columns: repeat(1, 1fr);}
 }
