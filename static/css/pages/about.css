@@ -1,0 +1,15 @@
+.header {position: static !important;}
+
+.main .t-normal {color: var(--text);}
+.main .para, .main .h1 {color: var(--text-secondary);}
+
+.main .h1 {
+    font-size: 75px;
+    line-height: 67px;
+}
+
+.main .para {font-size: 20px;}
+.main section {padding: 50px;}
+
+.main .about-content .left,
+.main .about-content .right {width: 50%;}
