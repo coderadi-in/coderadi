@@ -4,7 +4,7 @@ const alerts = document.querySelectorAll(".alert");
 function animate(index=0) {
     if (index >= alerts.length) {return;}
 
-    alerts[index].style.transform = "translateX(0)";
+    alerts[index].classList.add("show");
 
     setTimeout(() => {
         animate(index+1);
@@ -15,9 +15,10 @@ function animate(index=0) {
 function deanimate(index=0) {
     if (index >= alerts.length) {return;}
 
-    alerts[index].style.transform = "translateX(-110%)";
+    alerts[index].classList.remove("show");
 
     setTimeout(() => {
+        alerts[index].style.display = "none";
         deanimate(index+1);
     }, 100);
 }

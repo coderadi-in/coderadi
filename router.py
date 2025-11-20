@@ -9,11 +9,13 @@ router = Blueprint('router', __name__)
 # & BASE ROUTE
 @router.route('/')
 def home():
+    flash("This site is under development, some functions may not work", "warning")
     return render_template('pages/home.html')
 
 # & PROJECTS PAGE ROUTE
 @router.route('/projects/')
 def projects():
+    flash("This site is under development, some functions may not work", "warning")
     return render_template('pages/projects.html')
 
 # & ABOUT PAGE ROUTE
