@@ -24,7 +24,26 @@
 
 <body>
     <header class="header row h-sb">
-        
+        <div class="app-title row gap-10">
+            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/logo.png') }}" alt="Site logo" class="logo">
+            <h1 class="h1">LimitlessFit</h1>
+        </div>
+
+        <div class="options row gap-20">
+            <ul class="list row gap-10">
+                <li><a href="#about" class="link">About</a></li>
+                <li><a href="#plans" class="link">Plans</a></li>
+                <li><a href="#faqs" class="link">FAQs</a></li>
+            </ul>
+
+            <a href="#cta" class="link btn primary">Get quote</a>
+
+            <div class="theme-body">
+                <div class="theme-btn">
+                    <img src="{{ url_for('static', filename='assets/projects/landing-page-01/dark.png') }}" alt="Dark theme" class="icon">
+                </div>
+            </div>
+        </div>
     </header>
 </body>
 
