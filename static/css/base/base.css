@@ -198,6 +198,7 @@ label {font-family: "Inter", sans-serif;}
 
 .input {
     border: 1px solid var(--border);
+    color: var(--text);
     background-color: transparent;
     font-family: "Inter", sans-serif;
     outline: none;

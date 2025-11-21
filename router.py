@@ -41,4 +41,6 @@ def about():
 # & CONTACT PAGE ROUTE
 @router.route('/contact/')
 def contact():
-    return render_template('pages/contact.html')
+    referral = request.args.get('ref')
+    subject_referral = REFERRALS.get(referral, '')
+    return render_template('pages/contact.html', subject_referral=subject_referral)

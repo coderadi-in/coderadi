@@ -53,3 +53,9 @@ class Project(db.Model):
     external = db.Column(db.Boolean, default=False)
     tech_stack = db.Column(db.JSON, nullable=False)
     link = db.Column(db.String(100))
+
+# & DEFINING SOME CONSTANTS
+REFERRALS = {
+    'work': 'I wanna work with you.',
+    'connect': 'I have a project to discuss with you.'
+}

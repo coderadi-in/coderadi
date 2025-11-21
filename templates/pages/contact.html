@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+    <meta name="author" content="coderadi">
+    <meta name="theme-color" content="#0E0E10">
+    <!-- <meta name="google-site-verification" content="your_verification_code"> -->
+    <meta name="keywords"
+        content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, flet, Aditya Singh">
+
+    <meta name="description"
+        content="READY TO GET TO BUSINESS SCALE DIGITALLY? You can have a business website, portfolio site, or a landing page in just a matter of few weeks.">
+
+    <title>coderadi &bull; Let's connect</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/contact.css') }}">
+</head>
+
+<body>
+    {% include 'components/header.html' %}
+    {% include 'components/msg.html' %}
+
+    <main class="main column gap-50">
+        <img src="{{ url_for('static', filename='assets/images/skill-bg.png') }}" alt="Me" class="img bg">
+
+        <div class="content column gap-20">
+            <h1 class="h1">READY TO GET TO BUSINESS SCALE DIGITALLY?</h1>
+
+            <p class="para">If you're a business owner or a working professional who wants credibility, spotlight, and
+                24/7 place for clients to checkout, Let's connect!</p>
+
+            <p class="para">Fill the form below and we'll reach out to you for a perfect fit.</p>
+
+            <form action="/contact/" method="post" class="form column gap-10">
+                <div class="form-elem column gap-5">
+                    <label for="name">Name *</label>
+                    <input required type="text" name="name" id="name" placeholder="Your name" class="input">
+                </div>
+                
+                <div class="form-elem column gap-5">
+                    <label for="email">Email *</label>
+                    <input required type="text" name="email" id="email" placeholder="Your email" class="input">
+                </div>
+                
+                <div class="form-elem column gap-5">
+                    <label for="subject">Subject *</label>
+                    <input required type="text" name="subject" id="subject" value="{{ subject_referral }}" placeholder="Subject to talk on" class="input">
+                </div>
+                
+                <div class="form-elem column gap-5">
+                    <label for="message">Message *</label>
+                    <textarea required name="message" id="message" placeholder="Your message" class="input"></textarea>
+                </div>
+
+                <button type="submit" class="btn fl">Let's chat!</button>
+            </form>
+        </div>
+    </main>
+
+    {% include 'components/footer.html' %}
+</body>
+
+</html>
