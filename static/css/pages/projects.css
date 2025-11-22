@@ -9,4 +9,23 @@
 .hero .list {padding: 20px 0;}
 
 .hero .list .btn.fl:hover {box-shadow: 0 0 10px var(--primary);}
-.hero .list .btn.ot:hover {background-color: var(--secondary);}
+.hero .list .btn.ot {position: relative;}
+
+.hero .list .btn.ot::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    z-index: -1;
+    background-color: var(--secondary);
+    clip-path: circle(0% at 50% 50%);
+    transition: all 0.5s;
+}
+
+.hero .list .btn.ot:hover::before {
+    clip-path: circle(100% at 50% 50%);
+    box-shadow: 0 0 10px var(--secondary);
+}
