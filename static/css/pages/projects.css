@@ -4,7 +4,7 @@
     padding: 50px;
 }
 
-.hero .h1 {line-height: 0;}
+.hero .h1 {line-height: 40px;}
 .hero .para {max-width: 450px;}
 .hero .list {padding: 20px 0;}
 
