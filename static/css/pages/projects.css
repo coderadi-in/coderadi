@@ -1,0 +1,12 @@
+.hero {
+    height: 60vh;
+    justify-content: end;
+    padding: 50px;
+}
+
+.hero .h1 {line-height: 0;}
+.hero .para {max-width: 450px;}
+.hero .list {padding: 20px 0;}
+
+.hero .list .btn.fl:hover {box-shadow: 0 0 10px var(--primary);}
+.hero .list .btn.ot:hover {background-color: var(--secondary);}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+    <meta name="author" content="coderadi">
+    <meta name="theme-color" content="#0E0E10">
+    <!-- <meta name="google-site-verification" content="your_verification_code"> -->
+    <meta name="keywords"
+        content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, flet, Aditya Singh">
+
+    <meta name="description" content="A journey that began in the endless scroll culminates here. Not in words, but in working code and launched applications.">
+
+    <title>coderadi &bull; The Proof is in the Build</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/projects.css') }}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    {% include 'components/msg.html' %}
+
+    <main class="main column gap-50">
+        <section class="hero column gap-20">
+            <h1 class="h1">The Proof is in the Build</h1>
+            <p class="para">A journey that began in the endless scroll culminates here. Not in words, but in working code and launched applications.</p>
+
+            <ul class="list row gap-10">
+                <li><a href="#projects" class="link btn fl">Explore projects</a></li>
+                <li><a href="/about/" class="link btn ot">About me</a></li>
+            </ul>
+        </section>
+
+        <section class="projects" id="projects">
+            
+        </section>
+    </main>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>
