@@ -1,0 +1,23 @@
+/* | BASE */
+:root {
+    --background: #121212;
+    --surface: #2e2e2e;
+    --text: #f8f5f5;
+    --primary: #ff4d4d;
+}
+
+.light-theme {
+    --background: #F8F8F8;
+    --surface: #dfa3a3;
+    --text: #121212;
+    --primary: #ff4d4d;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* | HEADER */
+.header {padding: 20px;}
+.header #cta {padding: 10px 15px;}

@@ -33,6 +33,11 @@ def show_project(project_id):
     
     return redirect(project.link)
 
+# | SPECIFIC PROJECT ROUTE [DEV]
+@router.route('/projects/dev/<project_id>')
+def show_project_dev(project_id):
+    return render_template(f'projects/{project_id}.html')
+
 # & ABOUT PAGE ROUTE
 @router.route('/about/')
 def about():

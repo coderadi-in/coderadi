@@ -36,15 +36,27 @@
                 <li><a href="#faqs" class="link">FAQs</a></li>
             </ul>
 
-            <a href="#cta" class="link btn primary">Get quote</a>
-
-            <div class="theme-body">
-                <div class="theme-btn">
-                    <img src="{{ url_for('static', filename='assets/projects/landing-page-01/dark.png') }}" alt="Dark theme" class="icon">
-                </div>
-            </div>
+            <a href="#cta" class="link btn fl">Get quote</a>
         </div>
     </header>
+    <hr class="divider">
+
+    <main class="main column gap-50">
+        <section class="hero row h-sb gap-50">
+            <div class="left column gap-20">
+                <h3 class="h3">No gym? No problem. Home workouts available.</h3>
+                <h1 class="h1">Transform Your Body in 8 Weeks — No Guesswork.</h1>
+                <p class="para">Personalised training + diet plan designed for your lifestyle. Guaranteed progress.</p>
+                <a href="#book" class="link btn fl">Book Your Free Fitness Consultation</a>
+            </div>
+
+            <div class="right">
+                <img src="{{ url_for('static', filename='assets/projects/landing-page-01/hero.png') }}" alt="Hero section image" class="img">
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/projects/landing-page-01.js') }}"></script>
 </body>
 
 </html>
