@@ -1,10 +1,20 @@
 .header {position: static !important;}
 
+.bg.img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    object-fit: cover;
+    filter: blur(5px);
+}
+
 .main .t-normal {color: var(--text);}
 .main .para, .main .h1 {color: var(--text-secondary);}
 
 .main .h1 {
-    font-size: 75px;
+    font-size: clamp(36px, 75px, 15vw);
     line-height: 67px;
 }
 
@@ -13,3 +23,26 @@
 
 .main .about-content .left,
 .main .about-content .right {width: 50%;}
+
+@media (max-width: 768px) {
+    .main .about-content {flex-direction: column;}
+    .main .about-content:first-child {flex-direction: row;}
+
+    .main .about-content .left,
+    .main .about-content .right {width: 100%;}
+
+    .main .about-content:first-child .left,
+    .main .about-content:first-child .right {width: 50%;}
+}
+
+@media (max-width: 568px) {
+    .main section {padding: 20px;}
+    .main .about-content:first-child {flex-direction: column;}
+
+    .main .about-content:first-child .left,
+    .main .about-content:first-child .right {width: 100%;}
+}
+
+@media (max-width: 425px) {
+    .main .h1 {line-height: 52px;}
+}
