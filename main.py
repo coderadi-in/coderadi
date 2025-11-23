@@ -3,8 +3,11 @@
 # ? IMPORTING LIBRARIES
 from flask import Flask
 from extensions import *
-from router import router
 import os
+
+# ? IMPORTING ROUTES
+from router import router
+from api import api
 
 # ! ───────────────────────────────┐
 # ! LOADING VIRTUAL ENVIRONMENT    │
@@ -27,3 +30,4 @@ with server.app_context():
 
 # ! BINDING ROUTER
 server.register_blueprint(router)
+server.register_blueprint(api)
