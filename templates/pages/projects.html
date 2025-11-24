@@ -34,8 +34,22 @@
             </ul>
         </section>
 
-        <section class="projects" id="projects">
-            
+        <section class="projects column gap-20" id="projects">
+            <ul class="list row gap-10">
+                <li class="li text">All</li>
+                <li class="li text">Landing pages</li>
+                <li class="li text">Web apps</li>
+                <li class="li text">Mini tools</li>
+            </ul>
+
+            <div class="project-grid">
+                {% for project in data.projects %}
+                    <a href="{{ project.link }}" class="link project column">
+                        <img src="{{ url_for('static', filename=project.cover) }}" alt="Project cover" class="img">
+                        <h1 class="h1">{{ project.title }}</h1>
+                    </a>
+                {% endfor %}
+            </div>
         </section>
     </main>
 

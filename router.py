@@ -17,7 +17,11 @@ def home():
 @router.route('/projects/')
 def projects():
     flash("This site is under development, some functions may not work", "warning")
-    return render_template('pages/projects.html')
+    all_projects = Project.query.all()
+    
+    return render_template('pages/projects.html', data={
+        'projects': all_projects
+    })
 
 # | SPECIFIC PROJECT ROUTE
 @router.route('/projects/<project_id>')
@@ -29,7 +33,7 @@ def show_project(project_id):
         return redirect(url_for('router.projects'))
     
     if (not project.external):
-        return render_template(project.link)
+        return render_template(f'{project.link}.html')
     
     return redirect(project.link)
 
