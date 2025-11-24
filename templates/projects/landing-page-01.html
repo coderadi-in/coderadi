@@ -25,7 +25,8 @@
 <body>
     <header class="header row h-sb">
         <div class="app-title row gap-10">
-            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/logo.png') }}" alt="Site logo" class="logo">
+            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/logo.png') }}" alt="Site logo"
+                class="logo">
             <h1 class="h1">LimitlessFit</h1>
         </div>
 
@@ -51,8 +52,273 @@
             </div>
 
             <div class="right">
-                <img src="{{ url_for('static', filename='assets/projects/landing-page-01/hero.png') }}" alt="Hero section image" class="img">
+                <img src="{{ url_for('static', filename='assets/projects/landing-page-01/hero.png') }}"
+                    alt="Hero section image" class="img">
             </div>
+        </section>
+
+        <section class="about row gap-20">
+            <div class="left"><img src="{{ url_for('static', filename='assets/projects/landing-page-01/image.png') }}"
+                    alt="It's me" class="img"></div>
+
+            <div class="right column gap-10">
+                <h3 class="h3">Meet your coach, John doe</h3>
+                <p class="para">With over a decade of experience and a passion for helping people achieve their peak
+                    physical condition, I am dedicated to providing you with the tools and support you need to succeed.
+                </p>
+            </div>
+        </section>
+
+        <section class="benefits column gap-20">
+            <h1 class="h1">What you get with my coaching</h1>
+
+            <div class="benefits-list gap-10">
+                <div class="benefit column gap-10">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/workout.png') }}"
+                            alt="Workout" class="icon">
+                    </div>
+
+                    <h3 class="h3">Personalised workouts</h3>
+                    <p class="para">Custom plans tailored to your goals, fitness level, and equipment access.</p>
+                </div>
+
+                <div class="benefit column gap-10">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/menu_book.png') }}"
+                            alt="Diet" class="icon">
+                    </div>
+
+                    <h3 class="h3">Customized Diet Plans</h3>
+                    <p class="para">Nutrition guidance that fits your lifestyle and preferences, no extreme
+                        restrictions.</p>
+                </div>
+
+                <div class="benefit column gap-10">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/support_agent.png') }}"
+                            alt="Support" class="icon">
+                    </div>
+
+                    <h3 class="h3">24/7 WhatsApp Support</h3>
+                    <p class="para">Direct access to me for questions, motivation, and accountability whenever you need
+                        it.</p>
+                </div>
+
+                <div class="benefit column gap-10">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/monitoring.png') }}"
+                            alt="Workout" class="icon">
+                    </div>
+
+                    <h3 class="h3">Progress Tracking</h3>
+                    <p class="para">Weekly check-ins and data analysis to ensure you're consistently moving forward.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="transformations column gap-20">
+            <h1 class="h1">Real clients, real transformation</h1>
+
+            <div class="res-row gap-20">
+                <div class="trans">
+                    <h2 class="h2">Transformation placeholder</h2>
+                </div>
+
+                <div class="trans">
+                    <h2 class="h2">Transformation placeholder</h2>
+                </div>
+
+                <div class="trans">
+                    <h2 class="h2">Transformation placeholder</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials column gap-20">
+            <h1 class="h1">What my clients say</h1>
+
+            <div class="res-row gap-20">
+                <div class="review column gap-20">
+                    <div class="top row gap-10">
+                        <div class="placeholder"></div>
+                        <div class="column">
+                            <span class="text">Jessica M.</span>
+                            <span class="text">jessical@example.com</span>
+                        </div>
+                    </div>
+
+                    <div class="down">
+                        <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus
+                            quidem architecto, quod, veritatis quo ex rem dicta minus consectetur, cumque repudiandae
+                            enim unde numquam.</p>
+                    </div>
+                </div>
+
+                <div class="review column gap-20">
+                    <div class="top row gap-10">
+                        <div class="placeholder"></div>
+                        <div class="column">
+                            <span class="text">Ben T.</span>
+                            <span class="text">ben@example.com</span>
+                        </div>
+                    </div>
+
+                    <div class="down">
+                        <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus
+                            quidem architecto, quod, veritatis quo ex rem dicta minus consectetur, cumque repudiandae
+                            enim unde numquam.</p>
+                    </div>
+                </div>
+
+                <div class="review column gap-20">
+                    <div class="top row gap-10">
+                        <div class="placeholder"></div>
+                        <div class="column">
+                            <span class="text">Chloe S.</span>
+                            <span class="text">chloe@example.com</span>
+                        </div>
+                    </div>
+
+                    <div class="down">
+                        <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus
+                            quidem architecto, quod, veritatis quo ex rem dicta minus consectetur, cumque repudiandae
+                            enim unde numquam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="plans column v-center gap-20">
+            <h1 class="h1 title">Find the right plan for you</h1>
+
+            <div class="flex gap-20">
+                <div class="plan column gap-20">
+                    <div class="head column v-center">
+                        <h1 class="h1">starter</h1>
+                        <span class="text">For those new to fitness</span>
+                    </div>
+
+                    <ul class="list column gap-10">
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Custom workout plan</span>
+                        </li>
+
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Nutrition guidanlines</span>
+                        </li>
+
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Bi-weely check-ins</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="link btn fl">Choose plan</a>
+                </div>
+
+                <div class="plan column gap-20" id="popular">
+                    <div class="head column v-center">
+                        <h1 class="h1">Pro</h1>
+                        <span class="text">For dedicated results</span>
+                    </div>
+
+                    <ul class="list column gap-10">
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Custom workout &amp; cardio</span>
+                        </li>
+
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Personalised meal plan</span>
+                        </li>
+
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Weely check-ins</span>
+                        </li>
+
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">24/7 WhatsApp support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="link btn fl">Choose plan</a>
+                </div>
+
+                <div class="plan column gap-20">
+                    <div class="head column v-center">
+                        <h1 class="h1">Elite</h1>
+                        <span class="text">For the ultimate transformation</span>
+                    </div>
+
+                    <ul class="list column gap-10">
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">All pro features</span>
+                        </li>
+
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Weely video calls</span>
+                        </li>
+
+                        <li class="row gap-10">
+                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
+                                alt="Checked" class="icon">
+                            <span class="text">Supplment guidance</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="link btn fl">Choose plan</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faqs column gap-10 v-center">
+            <h1 class="h1">Frequently asked questions</h1>
+
+            <ul class="list column gap-10">
+                <li>
+                    <details>
+                        <summary class="text">How quickly will I see results?</summary>
+                        <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, odio!</p>
+                    </details>
+                </li>
+
+                <li>
+                    <details>
+                        <summary class="text">Do I need a gym membership?</summary>
+                        <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, odio!</p>
+                    </details>
+                </li>
+
+                <li>
+                    <details>
+                        <summary class="text">How do the check-ins work?</summary>
+                        <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, odio!</p>
+                    </details>
+                </li>
+            </ul>
+        </section>
+
+        <section class="cta column v-center gap-20">
+            <h1 class="h1">Ready to build your best self?</h1>
+            <p class="para">Stop waiting for 'the right time'. The right time is now. Apply for coaching today and let's start building the strong, confident, and healthy body you deserve.</p>
+            <a href="#" class="link btn fl">Apply for coaching</a>
         </section>
     </main>
 

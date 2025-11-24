@@ -1,18 +1,10 @@
 /* | BASE */
 :root {
     --background: #121212;
-    --surface: #2e2e2e;
+    --surface: #1B1B1B;
     --text: #f8f5f5;
     --primary: #ff4d4d;
 }
-
-.light-theme {
-    --background: #F8F8F8;
-    --surface: #dfa3a3;
-    --text: #121212;
-    --primary: #ff4d4d;
-}
-
 body {
     background-color: var(--background);
     color: var(--text);
@@ -21,3 +13,102 @@ body {
 /* | HEADER */
 .header {padding: 20px;}
 .header #cta {padding: 10px 15px;}
+
+/* | MAIN */
+.main {padding: 50px;}
+
+.main .hero .left,
+.main .hero .right {width: 50%;}
+
+.main .hero .left .h3 {color: var(--primary);}
+.main .hero .left .h1 {font-size: min(4rem, 10vw);}
+.main .hero .left .btn.fl {width: fit-content;}
+
+.main .hero .right .img {border-radius: 10px;}
+
+.main .about {
+    background-color: var(--surface);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.main .about .img {border-radius: 100px;}
+
+.main .benefits .benefits-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main .benefits .benefit {
+    background-color: var(--surface);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.main .benefits .benefit .icon-content {
+    background-color: var(--primary);
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.main .transformations .trans {
+    height: 450px;
+    background-color: var(--surface);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: end;
+}
+
+.main .testimonials .review {
+    background-color: var(--surface);
+    width: min(100%, 400px);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.main .testimonials .review .placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: var(--primary);
+}
+
+.main .plans .h1.title {text-align: center;}
+.main .plans .flex {flex-wrap: wrap;}
+.main .plans .plan {
+    background-color: var(--surface);
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.main .plans .plan#popular {
+    border: 2px solid var(--primary);
+    position: relative;
+}
+
+.main .plans .plan#popular::before {
+    content: 'Most popular';
+    position: absolute;
+    top: -15px;
+    left: calc(50% - 118.86px / 2);
+    border-radius: 50px;
+    padding: 5px 10px;
+    background-color: var(--primary);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+.main .plans .plan .head * {text-align: center;}
+.main .plans .plan .btn.fl {width: fit-content; margin: auto;}
+
+.main .cta {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--surface);
+}
+
+.main .cta * {text-align: center;}
+.main .cta .para {max-width: 500px;}
