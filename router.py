@@ -48,8 +48,34 @@ def about():
     return render_template('pages/about.html')
 
 # & CONTACT PAGE ROUTE
-@router.route('/contact/')
+@router.route('/contact/', methods=['GET', 'POST'])
 def contact():
-    referral = request.args.get('ref')
-    subject_referral = REFERRALS.get(referral, '')
-    return render_template('pages/contact.html', subject_referral=subject_referral)
+    if (request.method == 'GET'):
+        referral = request.args.get('ref')
+        subject_referral = REFERRALS.get(referral, '')
+        return render_template('pages/contact.html', subject_referral=subject_referral)
+    
+    else:
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+        
+        new_contact = ContactDetails(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message
+        )
+        
+        db.session.add(new_contact)
+        db.session.commit()
+
+        client.messages.create(
+            body=f"New contact form submission on your `portfolio site`.\n\nName: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}",
+            from_='whatsapp:+14155238886',
+            to='whatsapp:+919044791312'
+        )
+        
+        flash("Your message has been sent successfully!", "success")
+        return redirect(url_for('router.contact'))

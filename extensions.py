@@ -2,9 +2,15 @@
 
 # ? IMPORTING LIBRARIES
 from flask_sqlalchemy import SQLAlchemy
+from twilio.rest import Client
+import os
 
 # ! BUILDING EXTENSIONS
 db = SQLAlchemy()
+client = Client(
+    os.getenv('ACC_SID'),
+    os.getenv('AUTH_TOKEN')
+)
 
 # | CONTACT DETAILS DATABASE MODEL
 class ContactDetails(db.Model):
