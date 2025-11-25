@@ -45,7 +45,11 @@ class Project(db.Model):
     - `pre_release` [Boolean, `default=False`]: Is project pre-release.
     - `external` [Boolean, `default=False`]: Is project external.
     - `tech_stack` [`JSON`, `required`]: Technologies used in project.
-    - `link` [`String(100)`]: Link to project.
+    - `url` [`String(100)`]: path to the project.
+
+    ### The `url` param
+    If the project is external, means it's hosted outside coderadi's portfolio server, it'll host the complete URL to the project.
+    Else, it'll host the relative path to the project on coderadi's server.
     """
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

@@ -44,10 +44,22 @@
 
             <div class="project-grid">
                 {% for project in data.projects %}
-                    <a href="{{ project.link }}" class="link project column">
+                    <div class="link project column">
                         <img src="{{ url_for('static', filename=project.cover) }}" alt="Project cover" class="img">
-                        <h1 class="h1">{{ project.title }}</h1>
-                    </a>
+
+                        <div class="text-content column gap-20">
+                            <h2 class="h2">{{ project.title }}</h2>
+
+                            <ul class="list row gap-10">
+                                {% for tech in project.tech_stack %}
+                                    <li><span class="text">{{ tech }}</span></li>
+                                {% endfor %}
+                            </ul>
+
+                            <p class="para">{{ project.desc }}</p>
+                            <a href="{{ project.link }}" class="link btn fl">Open</a>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </section>
