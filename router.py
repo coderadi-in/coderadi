@@ -26,7 +26,7 @@ def projects():
 # | SPECIFIC PROJECT ROUTE
 @router.route('/projects/<project_id>')
 def show_project(project_id):
-    project = Project.query.filter_by(id=project_id).first()
+    project = Project.query.filter_by(url=project_id).first()
     
     if (not project):
         flash("Project not found", "error")
