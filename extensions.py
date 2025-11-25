@@ -1,4 +1,4 @@
-'''coderadi &bull; site extensions & database'''
+"""coderadi &bull; site extensions & database"""
 
 # ? IMPORTING LIBRARIES
 from flask_sqlalchemy import SQLAlchemy
@@ -7,14 +7,12 @@ import os
 
 # ! BUILDING EXTENSIONS
 db = SQLAlchemy()
-client = Client(
-    os.getenv('ACC_SID'),
-    os.getenv('AUTH_TOKEN')
-)
+client = Client(os.getenv("ACC_SID"), os.getenv("AUTH_TOKEN"))
+
 
 # | CONTACT DETAILS DATABASE MODEL
 class ContactDetails(db.Model):
-    '''
+    """
     ###### coderadi
     Holds the contact details filled by the user in contact form.
 
@@ -24,7 +22,7 @@ class ContactDetails(db.Model):
     - `email` [`String(75)`, `required`]: Email of user.
     - `subject` [`TEXT`]: Subject of contact.
     - `message` [`TEXT`]: Message from user.
-    '''
+    """
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(50), nullable=False)
@@ -34,7 +32,7 @@ class ContactDetails(db.Model):
 
 # | PROJECT DETAILS DATABASE MODEL
 class Project(db.Model):
-    '''
+    """
     ###### coderadi
     Holds the details of project built by coderadi.
 
@@ -48,20 +46,28 @@ class Project(db.Model):
     - `external` [Boolean, `default=False`]: Is project external.
     - `tech_stack` [`JSON`, `required`]: Technologies used in project.
     - `link` [`String(100)`]: Link to project.
-    '''
+    """
 
-    id = db.Column(db.String(100), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     cover = db.Column(db.String(100), nullable=False)
     title = db.Column(db.String(100), nullable=False)
     desc = db.Column(db.TEXT, nullable=False)
     category = db.Column(db.String(50), nullable=False)
     pre_release = db.Column(db.Boolean, default=False)
-    external = db.Column(db.Boolean, default=False)
     tech_stack = db.Column(db.JSON, nullable=False)
-    link = db.Column(db.String(100))
+    external = db.Column(db.Boolean, default=False)
+    url = db.Column(db.String(100))
 
 # & DEFINING SOME CONSTANTS
 REFERRALS = {
-    'work': 'I wanna work with you.',
-    'connect': 'I have a project to discuss with you.'
+    "work": "I wanna work with you.",
+    "connect": "I have a project to discuss with you.",
 }
+
+# * FUNCTION TO SEND WHATSAPP NOTIFICATIONS
+def notify(body: str):
+    client.messages.create(
+        body=body,
+        from_=f"whatsapp:{os.getenv('FROM_NUMBER')}",
+        to=f"whatsapp:{os.getenv('TO_NUMBER')}",
+    )

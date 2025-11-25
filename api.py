@@ -2,7 +2,7 @@
 
 # ? IMPORTING LIBRARIES
 from flask import Blueprint, request
-from extensions import db, Project
+from extensions import db, Project, notify
 import os
 
 # ! BUILDING API ROUTER
@@ -64,17 +64,79 @@ def new_db_project():
         pre_release=data.get('pre_release', False),
         external=data.get('external', False),
         tech_stack=data.get('tech_stack'),
-        link=data.get('link')
+        url=data.get('url')
     )
+
+    if (new_project.external):
+        url_template = new_project.url
+    else:
+        url_template = f"https://coderadi.in/projects/{new_project.url}.html"
 
     try:
         db.session.add(new_project)
         db.session.commit()
+        notify(f"New project added to `portfolio`.\n\n{url_template}\n\n    — coderadi.in")
 
         return {
             'res': {
                 'status': 200,
                 'message': 'Project created successfully!',
+            }
+        }, 200
+    
+    except Exception as e:
+        db.session.rollback()
+        return {
+            'res': {
+                'status': 500,
+                'message': f'Internal Server Error: {str(e)}',
+            }
+        }, 500
+    
+# & DB-PROJECT `DELETE` ROUTE
+@api.route('/db/projects/delete', methods=['DELETE'])
+def delete_db_project():
+    '''Delete a project from db'''
+
+    content_type = request.headers.get('Content-Type')
+    if (content_type != 'application/json'):
+        return {
+            'res': {
+                'status': 415,
+                'message': 'Unsupported Media Type: Content-Type must be application/json',
+            }
+        }, 415
+    
+    passkey = request.headers.get('Admin-Key')    
+    if (not check_admin_auth(passkey)):
+        return {
+            'res': {
+                'status': 403,
+                'message': 'Forbidden: Invalid Admin Key',
+            }
+        }, 403
+    
+    data = request.json
+    project_id = data.get('id')
+
+    project = Project.query.filter_by(id=project_id).first()
+    if (not project):
+        return {
+            'res': {
+                'status': 404,
+                'message': 'Project not found',
+            }
+        }, 404
+
+    try:
+        db.session.delete(project)
+        db.session.commit()
+        notify(f"Project deleted from `portfolio`.\n\nID: {project_id}\n\n    — coderadi.in")
+
+        return {
+            'res': {
+                'status': 200,
+                'message': 'Project deleted successfully!',
             }
         }, 200
     

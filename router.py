@@ -33,9 +33,9 @@ def show_project(project_id):
         return redirect(url_for('router.projects'))
     
     if (not project.external):
-        return render_template(f'{project.link}.html')
+        return render_template(f'projects/{project.url}.html')
     
-    return redirect(project.link)
+    return redirect(project.url)
 
 # | SPECIFIC PROJECT ROUTE [DEV]
 @router.route('/projects/dev/<project_id>')
@@ -71,11 +71,7 @@ def contact():
         db.session.add(new_contact)
         db.session.commit()
 
-        client.messages.create(
-            body=f"New contact form submission on your `portfolio site`.\n\nName: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}",
-            from_='whatsapp:+14155238886',
-            to='whatsapp:+919044791312'
-        )
+        notify(f"New contact form submission on your `portfolio site`.\n\nName: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}\n\n    — coderadi.in")
         
         flash("Your message has been sent successfully!", "success")
         return redirect(url_for('router.contact'))
