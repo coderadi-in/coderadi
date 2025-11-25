@@ -105,3 +105,17 @@
     text-align: center;
     border-radius: 8px;
 }
+
+@media (max-width: 1024px) {
+    .projects .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 568px) {
+    .main {padding: 20px;}
+    .main .hero {padding: 20px;}
+
+    .projects .project-grid {grid-template-columns: 1fr;}
+}
