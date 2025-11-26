@@ -28,7 +28,17 @@ def get_db_list():
             'status': 200,
             'message': 'Projects fetched successfully',
         },
-        'data': [project.to_dict() for project in projects]
+        'data': [{
+            'id': project.id,
+            'cover': project.cover,
+            'title': project.title,
+            'desc': project.desc,
+            'category': project.category,
+            'pre_release': project.pre_release,
+            'external': project.external,
+            'tech_stack': project.tech_stack,
+            'url': project.url
+        } for project in projects]
     }, 200
 
 # & DB-PROJECT `NEW` ROUTE
