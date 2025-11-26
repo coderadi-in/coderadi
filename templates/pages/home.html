@@ -2,18 +2,29 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43FKW98F8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-43FKW98F8P');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="language" content="en">
     <meta name="author" content="coderadi">
     <meta name="theme-color" content="#0E0E10">
-    <meta name="robots", content="index, follow">
-    <meta name="canonical", content="https://coderadi.in">
+    <meta name="robots" , content="index, follow">
+    <meta name="canonical" , content="https://coderadi.in">
     <!-- <meta name="google-site-verification" content="your_verification_code"> -->
     <meta name="keywords"
         content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, flet, Aditya Singh">
 
-    <meta name="description" content="Hi, I'm Aditya. A dedicated software developer & entreprenuer, building custom software and websites.">
+    <meta name="description"
+        content="Hi, I'm Aditya. A dedicated software developer & entreprenuer, building custom software and websites.">
 
     <title>coderadi &bull; Aditya</title>
     <link rel="icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
@@ -73,8 +84,9 @@
             <div class="grid gap-20">
                 <div class="skill-show column gap-20">
                     <h3 class="h3">Frontend dev.</h3>
-                    <p class="para">I can build responsive frontend for any software or website for almost any device and any screen.</p>
-                    
+                    <p class="para">I can build responsive frontend for any software or website for almost any device
+                        and any screen.</p>
+
                     <ul class="list row gap-10">
                         <li><span class="tag text e">HTML</span></li>
                         <li><span class="tag text e">CSS</span></li>
@@ -82,20 +94,22 @@
                         <li><span class="tag text w">Flet</span></li>
                     </ul>
                 </div>
-                
+
                 <div class="skill-show column gap-20">
                     <h3 class="h3">Backend dev.</h3>
-                    <p class="para">I build web-servers or backend for mainly websites, but it can work for other software too.</p>
+                    <p class="para">I build web-servers or backend for mainly websites, but it can work for other
+                        software too.</p>
 
                     <ul class="list row gap-10">
                         <li><span class="tag text e">Flask</span></li>
                         <li><span class="tag text w">NodeJS</span></li>
                     </ul>
                 </div>
-                
+
                 <div class="skill-show column gap-20">
                     <h3 class="h3">Data science</h3>
-                    <p class="para">I'm currently learning Data Science, after learning I'll build mini AI tools & company specific chatbots.</p>
+                    <p class="para">I'm currently learning Data Science, after learning I'll build mini AI tools &
+                        company specific chatbots.</p>
 
                     <ul class="list row gap-10">
                         <li><span class="tag text e">Python</span></li>
@@ -107,13 +121,20 @@
 
             <div class="row h-sb gap-20" id="langs">
                 <ul class="list res-row gap-10">
-                    <li><img src="{{ url_for('static', filename='assets/icons/python.png') }}" alt="python" loading="lazy" class="icon"></li>
-                    <li><img src="{{ url_for('static', filename='assets/icons/html.png') }}" alt="html" loading="lazy" class="icon"></li>
-                    <li><img src="{{ url_for('static', filename='assets/icons/css.png') }}" alt="css" loading="lazy" class="icon"></li>
-                    <li><img src="{{ url_for('static', filename='assets/icons/js.png') }}" alt="js" loading="lazy" class="icon"></li>
-                    <li><img src="{{ url_for('static', filename='assets/icons/flask.png') }}" alt="flask" loading="lazy" class="icon"></li>
-                    <li><img src="{{ url_for('static', filename='assets/icons/flet.png') }}" alt="flet" loading="lazy" class="icon"></li>
-                    <li><img src="{{ url_for('static', filename='assets/icons/nodejs.png') }}" alt="nodejs" loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/python.png') }}" alt="python"
+                            loading="lazy" class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/html.png') }}" alt="html" loading="lazy"
+                            class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/css.png') }}" alt="css" loading="lazy"
+                            class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/js.png') }}" alt="js" loading="lazy"
+                            class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/flask.png') }}" alt="flask" loading="lazy"
+                            class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/flet.png') }}" alt="flet" loading="lazy"
+                            class="icon"></li>
+                    <li><img src="{{ url_for('static', filename='assets/icons/nodejs.png') }}" alt="nodejs"
+                            loading="lazy" class="icon"></li>
                 </ul>
 
                 <h3 class="h3">Languages & frameworks</h3>
@@ -122,39 +143,49 @@
             <div class="grid gap-20" id="tech">
                 <div class="tool column gap-10">
                     <ul class="list row gap-10">
-                        <li><img src="{{ url_for('static', filename='assets/icons/git.png') }}" alt="GitHub" class="icon"></li>
-                        <li><img src="{{ url_for('static', filename='assets/icons/vs-code.png') }}" alt="VS Code" class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/git.png') }}" alt="GitHub"
+                                class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/vs-code.png') }}" alt="VS Code"
+                                class="icon"></li>
                     </ul>
 
                     <h3 class="h3">Dev. workspace</h3>
-                    <p class="para">I use VS code and GitHub for development and version control. With this combo, I can build and update the code in collaborative space also.</p>
+                    <p class="para">I use VS code and GitHub for development and version control. With this combo, I can
+                        build and update the code in collaborative space also.</p>
                 </div>
 
                 <div class="tool column gap-10">
                     <ul class="list row gap-10">
-                        <li><img src="{{ url_for('static', filename='assets/icons/mysql.png') }}" alt="MySQL" class="icon"></li>
-                        <li><img src="{{ url_for('static', filename='assets/icons/sqlite.png') }}" alt="SQLite" class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/mysql.png') }}" alt="MySQL"
+                                class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/sqlite.png') }}" alt="SQLite"
+                                class="icon"></li>
                     </ul>
 
                     <h3 class="h3">Database integration</h3>
-                    <p class="para">I use MySQL for large sized and production standard projects, and SQLite for mid/small sized projects as it provides flexibility at low level.</p>
+                    <p class="para">I use MySQL for large sized and production standard projects, and SQLite for
+                        mid/small sized projects as it provides flexibility at low level.</p>
                 </div>
 
                 <div class="tool column gap-10">
                     <ul class="list row gap-10">
-                        <li><img src="{{ url_for('static', filename='assets/icons/figma.png') }}" alt="Figma" class="icon"></li>
-                        <li><img src="{{ url_for('static', filename='assets/icons/stitch.png') }}" alt="Stitch AI" class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/figma.png') }}" alt="Figma"
+                                class="icon"></li>
+                        <li><img src="{{ url_for('static', filename='assets/icons/stitch.png') }}" alt="Stitch AI"
+                                class="icon"></li>
                     </ul>
 
                     <h3 class="h3">Frontend designing</h3>
-                    <p class="para">I use Figma and Stitch AI to design the frontend for any site or any app. These tools are industry standard and use by almost all frontend devs.</p>
+                    <p class="para">I use Figma and Stitch AI to design the frontend for any site or any app. These
+                        tools are industry standard and use by almost all frontend devs.</p>
                 </div>
             </div>
         </section>
 
         <section class="cta column gap-20 v-center">
             <h1 class="h1">Let's build together</h1>
-            <p class="para">Have a project in mind? I'd love to hear and see how I can help you bring your vision to life.</p>
+            <p class="para">Have a project in mind? I'd love to hear and see how I can help you bring your vision to
+                life.</p>
 
             <div class="res-row gap-10">
                 <a href="/contact/?ref=project" class="link btn fl">Get in touch</a>
