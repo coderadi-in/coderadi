@@ -80,7 +80,7 @@ def new_db_test_project():
     if (new_project['external']):
         url_template = new_project['url']
     else:
-        url_template = f"https://coderadi.in/projects/{new_project['url']}.html"
+        url_template = f"https://coderadi.in/projects/{new_project['url']}.html" 
 
     try:
         # db.session.add(new_project)
