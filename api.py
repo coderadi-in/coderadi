@@ -86,7 +86,7 @@ def new_db_test_project():
         # db.session.add(new_project)
         # db.session.commit()
 
-        with open('db/projects.json', 'w') as f:
+        with open('/db/projects.json', 'w') as f:
             json.dump(new_project, f, indent=4)
 
         notify(f"New project added to `portfolio`.\n\n{url_template}\n\n    — coderadi.in")
