@@ -30,8 +30,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/projects.css') }}">
 </head>
 <body>
-    {% include 'components/header.html' %}
     {% include 'components/msg.html' %}
+    <span class="glowlight" id="top-glowlight"></span>
+    {% include 'components/header.html' %}
 
     <main class="main column gap-50">
         <section class="hero column gap-20">
@@ -76,5 +77,6 @@
     </main>
 
     {% include 'components/footer.html' %}
+    <span class="glowlight" id="bottom-glowlight"></span>
 </body>
 </html>

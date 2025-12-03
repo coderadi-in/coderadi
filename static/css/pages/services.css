@@ -1,3 +1,34 @@
+.glowlight {
+    position: fixed;
+    width: max(250px, 20vw);
+    height: max(250px, 20vw);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+#top-glowlight {
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        circle at top left,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
+#bottom-glowlight {
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(
+        circle at bottom right,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
 .header {position: static !important;}
 .main {padding: 50px;}
 
@@ -29,5 +60,73 @@
     width: fit-content;
 }
 
-.featured .icon-content {width: 50%;}
-.featured .text-content .h2 {font-size: min(5rem, 10vw);}
+.featured .img {width: 10%;}
+
+.featured #cta {
+    width: fit-content;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 30%);
+    position: relative;
+    z-index: 0;
+}
+
+.featured #cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 30%);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.featured #cta:hover::before {filter: blur(8px);}
+
+.offerings .head {text-align: center;}
+
+.offerings .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.services-grid .service {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--surface);
+    border: 1px solid var(--secondary);
+}
+
+.services-grid .service .icon {width: fit-content;}
+
+.cta {
+    padding: 50px;
+    text-align: center;
+}
+
+.cta .link {
+    width: fit-content;
+    padding: 20px 50px;
+}
+
+.cta .link:hover {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 30%);
+    color: var(--surface);
+    box-shadow: 0 0 15px var(--secondary);
+}
+
+@media (max-width: 568px) {
+    .main {padding: 20px;}
+}
+
+@media (max-width: 458px) {
+    .cta {padding: 20px;}
+    .featured {padding: 30px;}
+
+    .featured .title {
+        flex-direction: column;
+        align-items: start;
+    }
+}

@@ -33,8 +33,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/services.css') }}">
 </head>
 <body>
-    {% include 'components/header.html' %}
     {% include 'components/msg.html' %}
+    <span class="glowlight" id="top-glowlight"></span>
+    {% include 'components/header.html' %}
 
     <main class="main column gap-50">
         <section class="hero column gap-10">
@@ -47,25 +48,59 @@
         </section>
 
         <section class="featured column gap-20">
-            <ul class="list res-row gap-10">
-                <li><span class="tag text">Featured service</span></li>
-                <li><span class="tag text">For fitness coaches</span></li>
-            </ul>
+            <div class="res-row gap-10">
+                <span class="tag text">Featured service</span>
+                <span class="tag text">For fitness coaches</span>
+            </div>
 
-            <div class="row gap-20">
-                <div class="icon-content">
-                    <img src="{{ url_for('static', filename='assets/icons/the-authority-launchpad.png') }}" alt="The Authority Launchpad" class="img">
+            <div class="title row gap-20">
+                <img src="{{ url_for('static', filename='assets/icons/the-authority-launchpad.png') }}" alt="The Authority Launchpad" class="img">
+                <h2 class="h2">The authority launchpad</h2>
+            </div>
+
+            <div class="text-content column gap-10">
+                <p class="para">The Authority Launchpad is my exclusive, done-for-you solution. It's not just a one-page website; it's your 24/7 client acquisition partner, designed to transform profile visitors into booked consultations effortlessly.</p>
+                <p class="para">STOP CHASING, START CONVERTING!</p>
+            </div>
+
+            <a href="/services/the-authority-launchpad" class="link btn fl" id="cta">Learn more</a>
+        </section>
+
+        <section class="offerings column gap-20">
+            <div class="head">
+                <h1 class="h1">My core offerings</h1>
+                <p class="para">A complete suite of services to handle your project from start to finish.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service column gap-10">
+                    <img src="{{ url_for('static', filename='assets/icons/web-dev.png') }}" alt="Web development" class="icon">
+                    <h2 class="h2">Web development</h2>
+                    <p class="para">Building responsive, performant, and modern websites and web applications using cutting-edge technologies.</p>
                 </div>
-
-                <div class="text-content column gap-10">
-                    <h2 class="h2">The authority launchpad</h2>
-                    <p class="para">The Authority Launchpad is my exclusive, done-for-you solution. It's not just a one-page website; it's your 24/7 client acquisition partner, designed to transform profile visitors into booked consultations effortlessly.</p>
-                    <p class="para">STOP CHASING, START CONVERTING!</p>
+                
+                <div class="service column gap-10">
+                    <img src="{{ url_for('static', filename='assets/icons/app-dev.png') }}" alt="Software development" class="icon">
+                    <h2 class="h2">Custom Software Development</h2>
+                    <p class="para">Tailored software solutions to solve specific business problems, focusing on scalability and robust architecture. (web-applications)</p>
+                </div>
+                
+                <div class="service column gap-10">
+                    <img src="{{ url_for('static', filename='assets/icons/uiux.png') }}" alt="UIUX design" class="icon">
+                    <h2 class="h2">UI/UX design</h2>
+                    <p class="para">Crafting intuitive, user-centric interfaces and seamless user experiences from wireframing to final design.</p>
                 </div>
             </div>
+        </section>
+
+        <section class="cta column gap-10 v-center">
+            <h1 class="h1">Ready to build something great?</h1>
+            <p class="para">Collaborate and bring your ideas to life. Reach out to discuss your project.</p>
+            <a href="/contact/ref=project" class="link btn fl">Start a project</a>
         </section>
     </main>
 
     {% include 'components/footer.html' %}
+    <span class="glowlight" id="bottom-glowlight"></span>
 </body>
 </html>

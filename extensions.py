@@ -66,6 +66,7 @@ class Project(db.Model):
 REFERRALS = {
     "work": "I wanna work with you.",
     "connect": "I have a project to discuss with you.",
+    "project": "I wanna build a project with you.",
 }
 
 # * FUNCTION TO SEND WHATSAPP NOTIFICATIONS
