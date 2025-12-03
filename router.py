@@ -42,6 +42,12 @@ def show_project(project_id):
 def show_project_dev(project_id):
     return render_template(f'projects/{project_id}.html')
 
+# & SERVICES PAGE ROUTE
+@router.route('/services/')
+def services():
+    flash("This site is under development, some functions may not work", "warning")
+    return render_template('pages/services.html')
+
 # & ABOUT PAGE ROUTE
 @router.route('/about/')
 def about():

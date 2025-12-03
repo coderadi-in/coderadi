@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43FKW98F8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-43FKW98F8P');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+    <meta name="author" content="coderadi">
+    <meta name="theme-color" content="#0E0E10">
+    <meta name="robots" , content="index, follow">
+    <meta name="canonical" , content="https://coderadi.in">
+    <!-- <meta name="google-site-verification" content="your_verification_code"> -->
+    <meta name="keywords"
+        content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, flet, Aditya Singh">
+
+    <meta name="description"
+        content="Hi, I'm Aditya. A dedicated software developer & entreprenuer, building custom software and websites.">
+
+    <title>coderadi &bull; Let's work together</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/services.css') }}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    {% include 'components/msg.html' %}
+
+    <main class="main column gap-50">
+        <section class="hero column gap-10">
+            <span class="text">Our offerings</span>
+            <h1 class="h1">
+                <p>Crafting digital solutions,</p>
+                <p>from concept to code.</p>
+            </h1>
+            <p class="para">I offer a spectrum of services to bring your digital vision to life, ensuring robust, scalable, and user-centric results.</p>
+        </section>
+
+        <section class="featured column gap-20">
+            <ul class="list res-row gap-10">
+                <li><span class="tag text">Featured service</span></li>
+                <li><span class="tag text">For fitness coaches</span></li>
+            </ul>
+
+            <div class="row gap-20">
+                <div class="icon-content">
+                    <img src="{{ url_for('static', filename='assets/icons/the-authority-launchpad.png') }}" alt="The Authority Launchpad" class="img">
+                </div>
+
+                <div class="text-content column gap-10">
+                    <h2 class="h2">The authority launchpad</h2>
+                    <p class="para">The Authority Launchpad is my exclusive, done-for-you solution. It's not just a one-page website; it's your 24/7 client acquisition partner, designed to transform profile visitors into booked consultations effortlessly.</p>
+                    <p class="para">STOP CHASING, START CONVERTING!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>

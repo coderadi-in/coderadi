@@ -1,0 +1,33 @@
+.header {position: static !important;}
+.main {padding: 50px;}
+
+.hero {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero .text {
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.hero .h1 {font-size: min(5rem, 10vw);}
+
+.featured {
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 2px var(--secondary);
+    background-color: var(--surface);
+}
+
+.featured .tag {
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: #16366D;
+    color: var(--secondary);
+    width: fit-content;
+}
+
+.featured .icon-content {width: 50%;}
+.featured .text-content .h2 {font-size: min(5rem, 10vw);}
