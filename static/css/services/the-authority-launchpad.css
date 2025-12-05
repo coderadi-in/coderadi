@@ -1,0 +1,228 @@
+/* | BASE */
+
+.main {padding: 50px;}
+
+.glowlight {
+    position: fixed;
+    width: max(250px, 20vw);
+    height: max(250px, 20vw);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+#top-glowlight {
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        circle at top left,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
+#bottom-glowlight {
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(
+        circle at bottom right,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
+.icon {width: 24px;}
+
+
+/* | HERO */
+
+.hero {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.hero .h1 {font-size: clamp(5rem, 36px, 10vw);}
+
+.hero .btn.fl {
+    position: relative;
+    width: fit-content;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%);
+}
+
+.hero .btn.fl::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.hero .btn.fl:hover::before {filter: blur(8px);}
+
+.hero .illustration {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 2px solid var(--border);
+    position: relative;
+    z-index: 0;
+    gap: 30px;
+}
+
+.hero .illustration::before {
+    content: "";
+    position: absolute;
+    height: calc(100% - 40px);
+    width: 0px;
+    border: 1px dashed var(--primary);
+    margin: 0 20px;
+    z-index: -1;
+}
+
+.hero .icon-content {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #112E5F;
+}
+
+.hero .icon-content#outcome {background-color: var(--secondary);}
+
+
+/* | BENEFITS */
+
+.benefits .head {text-align: center;}
+.benefits .head .h1 {font-size: min(5rem, 10vw);}
+.benefits .head .para {width: max(50%, 250px);}
+
+.benefits .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.benefits .grid .benefit {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+
+/* | CORE */
+
+.core {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.core .scene {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+/* | FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.features .feature {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+
+/* | ROADMAP */
+
+.roadmap .body {
+    position: relative;
+    z-index: 0;
+}
+
+.roadmap .body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: calc(100% - 24px);
+    width: 0px;
+    border: 1px dashed var(--border);
+    margin: 0 24px;
+}
+
+.roadmap .icon-content {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: var(--surface);
+    height: fit-content;
+    border: 2px solid var(--primary);
+}
+
+.roadmap .title {
+    font-weight: bold;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+
+/* | INFO-SEC */
+
+.info-sec .info {
+    width: min(100%, 700px);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 2px solid var(--border);
+}
+
+.info-sec .info .icon-content {
+    padding: 20px;
+    border-radius: 50px;
+    background-color: var(--background);
+}
+
+.info-sec .info .icon-content .icon {width: 50px;}
+
+
+/* | FAQs */
+
+.faqs .h1 {text-align: center;}
+.faqs .questions {width: min(700px, 100%);}
+
+.faqs .question {
+    background-color: var(--surface);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.faqs .question::details-content {
+    opacity: 0;
+    transform: translateY(-10px);
+    block-size: 0;
+    overflow-y: clip;
+    transition: content-visibility 0.6s allow-discrete, opacity 0.6s, block-size 0.6s;
+}
+
+.faqs .question[open] {gap: 10px;}
+.faqs .question[open] .icon {transform: rotate(90deg);}
+
+.faqs .question[open]::details-content {
+    opacity: 1;
+    transform: translateY(0);
+    block-size: auto;
+}
+
+.faqs summary {cursor: pointer;}
+.faqs summary::marker {content: '';}

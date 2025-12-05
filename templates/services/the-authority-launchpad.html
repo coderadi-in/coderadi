@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43FKW98F8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-43FKW98F8P');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+    <meta name="author" content="coderadi">
+    <meta name="theme-color" content="#0E0E10">
+    <meta name="robots" , content="index, follow">
+    <meta name="canonical" , content="https://coderadi.in">
+    <!-- <meta name="google-site-verification" content="your_verification_code"> -->
+    <meta name="keywords"
+        content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, fitness website">
+
+    <title>coderadi &bull; The Authority Launchpad</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services/the-authority-launchpad.css') }}">
+</head>
+
+<body>
+    {% include 'components/msg.html' %}
+    <span class="glowlight" id="top-glowlight"></span>
+    {% include 'components/header.html' %}
+
+    <main class="main column gap-50">
+        <section class="hero gap-50">
+            <div class="text-content column gap-10">
+                <h1 class="h1">Launch your fitness coaching Authority.</h1>
+                <p class="para">The ultimate program for fitness coaches to build their brand, attract high-paying
+                    clients, and scale their business.</p>
+                <div class="res-row gap-10">
+                    <a href="#join-launchpad" class="link btn fl">Join the program now</a>
+                    <a href="/projects/dev/landing-page-01" class="link btn ot">Checkout template example</a>
+                </div>
+            </div>
+
+            <div class="illustration column">
+                <div class="row gap-10">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/flag.png') }}"
+                            alt="Current state" class="icon">
+                    </div>
+
+                    <div class="text-content">
+                        <h3 class="h3">Current state: The grind</h3>
+                        <span class="text">Talking to online clients &amp; building trust from $0 every time.</span>
+                    </div>
+                </div>
+
+                <div class="row gap-10">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/logo.png') }}"
+                            alt="Implementation" class="icon">
+                    </div>
+
+                    <div class="text-content">
+                        <h3 class="h3">The Authority Launchpad</h3>
+                        <span class="text">Implement your own landing page to build credibility &amp; increase
+                            conversion.</span>
+                    </div>
+                </div>
+
+                <div class="row gap-10">
+                    <div class="icon-content" id="outcome">
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/outcome.png') }}"
+                            alt="Desired outcome" class="icon">
+                    </div>
+
+                    <div class="text-content">
+                        <h3 class="h3">Desired outcome: More conversions</h3>
+                        <span class="text">Automated client flow, more credibility.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits column gap-50">
+            <div class="head column gap-10 v-center">
+                <h1 class="h1">Escape the grind. Build your authority.</h1>
+                <p class="para">You're passionate about fitness, but the business side is constant struggle. We provide
+                    the exact landing-page to solve your biggest challange and put you on the path to success</p>
+            </div>
+
+            <div class="grid gap-20">
+                <div class="benefit column gap-10">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/clients.png') }}"
+                        alt="Clients" class="icon">
+                    <h3 class="h3">Attract high-ticket clients</h3>
+                    <p class="para">Implement our landing-page for attracting clients who are ready to invest in
+                        high-value coaching.</p>
+                </div>
+
+                <div class="benefit column gap-10">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/authority.png') }}"
+                        alt="Clients" class="icon">
+                    <h3 class="h3">Build unshakable authority</h3>
+                    <p class="para">Position yourself as the go-to expert in your niche with a customized landing-page
+                        for your coaching.</p>
+                </div>
+
+                <div class="benefit column gap-10">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/scale.png') }}"
+                        alt="Clients" class="icon">
+                    <h3 class="h3">Scale your business</h3>
+                    <p class="para">Landing pages allow you to grow your credibility &amp; income without trading more
+                        time for trust.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="core gap-50">
+            <div class="scene column gap-10">
+                <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/problem.png') }}"
+                    alt="Problem" class="icon">
+                <h3 class="h3">The problem</h3>
+
+                <p class="para">Struggling to build credibility &amp; trust? Feeling like you're just another voice in a
+                    crowded market? Constatnly creating content with little to no return?</p>
+            </div>
+
+            <div class="scene column gap-10">
+                <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/solution.png') }}"
+                    alt="Problem" class="icon">
+                <h3 class="h3">The solution</h3>
+
+                <p class="para">Develop an undeniable brand, create scalable high-ticket client offer, and implement a
+                    landing page that attracts your ideal client to you on autopilot.</p>
+            </div>
+        </section>
+
+        <section class="recv column gap-20">
+            <h1 class="h1">Here's what exactly you'll receive</h1>
+
+            <div class="features gap-20">
+                <div class="feature column gap-10">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/site.png') }}"
+                        alt="Landing page" class="icon">
+                    <h3 class="h3">custom landing page</h3>
+                    <p class="para">A customized landing page tailored to attract your ideal clients and boost your
+                        credibility.</p>
+                </div>
+
+                <div class="feature column gap-10">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/email.png') }}"
+                        alt="Email" class="icon">
+                    <h3 class="h3">1-month free email</h3>
+                    <p class="para">A business email e.g., (<span class="highlight">you@yourbrand.com</span>), for
+                        1-month. Can be renewed</p>
+                </div>
+
+                <div class="feature column gap-10">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/support.png') }}"
+                        alt="Support" class="icon">
+                    <h3 class="h3">2 month priority support</h3>
+                    <p class="para">You can get any updates in your site for absolutely free for 2 months with quick
+                        responses.</p>
+                </div>
+            </div>
+        </section>
+        <hr class="divider">
+        <section class="roadmap column gap-50">
+            <div class="head column gap-10 v-center">
+                <h1 class="h1">Your step-by-step path to success</h1>
+                <p class="para">We've distilled the process of building a landing-page for your business into four
+                    simple, actionable phases.</p>
+            </div>
+
+            <div class="body column gap-20">
+                <div class="phase flex gap-20">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/design.png') }}"
+                            alt="Design" class="icon">
+                    </div>
+
+                    <div class="text content">
+                        <span class="title">Phase 1 (Day 1 - 3)</span>
+                        <h3 class="h3">Plan &amp; Design</h3>
+                        <p class="para">First, we'll plan &amp; design your business landing page.</p>
+                    </div>
+                </div>
+
+                <div class="phase flex gap-20">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/code.png') }}"
+                            alt="Code" class="icon">
+                    </div>
+
+                    <div class="text content">
+                        <span class="title">Phase 2 (Day 4 - 6)</span>
+                        <h3 class="h3">Code</h3>
+                        <p class="para">Then, we'll code your site and upload it to testing server.</p>
+                    </div>
+                </div>
+
+                <div class="phase flex gap-20">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/review.png') }}"
+                            alt="Review" class="icon">
+                    </div>
+
+                    <div class="text content">
+                        <span class="title">Phase 3 (Day 7)</span>
+                        <h3 class="h3">Review</h3>
+                        <p class="para">Now when your site is live on test server, you can review it.</p>
+                    </div>
+                </div>
+
+                <div class="phase flex gap-20">
+                    <div class="icon-content">
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/site.png') }}"
+                            alt="Upload" class="icon">
+                    </div>
+
+                    <div class="text content">
+                        <span class="title">Phase 4 (Day 7)</span>
+                        <h3 class="h3">Upload</h3>
+                        <p class="para">After reviewing we'll uplaod your site on main server on the same day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing column gap-20">
+            <div class="head column gap-10 v-center">
+                <h1 class="h1">Ready to launch your authority?</h1>
+                <p class="para">Choose the plan that's right for you and start building your empire today.</p>
+            </div>
+
+            <div class="body grid gap-50">
+
+            </div>
+        </section>
+
+        <section class="info-sec column gap-20 v-center">
+            <div class="info row gap-20">
+                <div class="icon-content">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/info-client.png') }}"
+                        alt="Client onboarding" class="icon">
+                </div>
+
+                <div class="text-content column gap-10">
+                    <h2 class="h2">The Exclusive Client Capacity</h2>
+
+                    <p class="para">To ensure each client receives my undivided focus, strategic depth, and rapid
+                        execution, I limit my availability to only 2 clients per month. This allows me to maintain the
+                        highest standard of quality and deliver a truly personalized, high-impact Client Gateway within
+                        5 business days.</p>
+                </div>
+            </div>
+
+            <div class="info row gap-20">
+                <div class="icon-content">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/info-performance.png') }}"
+                        alt="Performace promise" class="icon">
+                </div>
+
+                <div class="text-content column gap-10">
+                    <h2 class="h2">The No-Starter Guarantee</h2>
+
+                    <p class="para">After our initial strategy session, if you feel we aren't the perfect fit—before I
+                        write a single line of code—I will issue a 100% refund immediately, no questions asked. This
+                        ensures you invest with complete confidence and clarity from the very beginning.</p>
+                </div>
+            </div>
+
+            <div class="info row gap-20">
+                <div class="icon-content">
+                    <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/info-nostarter.png') }}"
+                        alt="No starter" class="icon">
+                </div>
+
+                <div class="text-content column gap-10">
+                    <h2 class="h2">The Performance Promise Guarantee</h2>
+
+                    <p class="para">I stand firmly behind the results of your Launchpad. If your new Client Gateway,
+                        with traffic from your Instagram profile, does not generate at least 5 qualified lead inquiries
+                        within 30 days of launch, I will provide an additional month of dedicated optimization and
+                        strategic support at no extra cost until it does. Your success is my commitment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faqs column gap-20 v-center">
+            <h1 class="h1">Frequently Asked Questions</h1>
+
+            <div class="questions column gap-10">
+                <details class="question column">
+                    <summary class="row h-sb gap-20">
+                        <span class="text">How does the Authority Launchpad differ from a regular one-page website?</span>
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/open.png') }}" alt="Expand" class="icon">
+                    </summary>
+
+                    <p class="para">The Authority Launchpad is not just a website—it's a conversion-focused Client
+                        Gateway built on a proven strategy to turn Instagram visitors into booked clients. It includes
+                        pre-written copy frameworks, automated qualification elements, trust-building sections, and a
+                        seamless booking flow—all designed to reduce friction and increase conversions from day one.</p>
+                </details>
+
+                <details class="question column">
+                    <summary class="row h-sb gap-20">
+                        <span class="text">What exactly happens during the Strategy Session?</span>
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/open.png') }}" alt="Expand" class="icon">
+                    </summary>
+
+                    <p class="para">We'll dive deep into your business, target audience, unique value, and conversion
+                        goals. This session ensures your Launchpad is tailored to attract and persuade your ideal
+                        clients—not built from a generic template. It's a collaborative process that clarifies your
+                        messaging and sets the foundation for your Client Gateway.</p>
+                </details>
+
+                <details class="question column">
+                    <summary class="row h-sb gap-20">
+                        <span class="text">How quickly will my Launchpad be ready?</span>
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/open.png') }}" alt="Expand" class="icon">
+                    </summary>
+
+                    <p class="para">From the start of our strategy session, your custom Client Gateway will be built,
+                        reviewed, and launched in <strong>5 business days or less</strong>. This includes design, copy,
+                        integration, and launch support.</p>
+                </details>
+
+                <details class="question column">
+                    <summary class="row h-sb gap-20">
+                        <span class="text">Do I need any technical skills to use the Launchpad?</span>
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/open.png') }}" alt="Expand" class="icon">
+                    </summary>
+
+                    <p class="para">Not at all. I handle everything—from setup to launch—and include 1 month of minor
+                        edits and support post-launch. You'll also receive access to analytics, but no technical
+                        knowledge is required on your part.</p>
+                </details>
+
+                <details class="question column">
+                    <summary class="row h-sb gap-20">
+                        <span class="text">What happens if I don't get enough leads after launch?</span>
+                        <img src="{{ url_for('static', filename='assets/services/the-authority-launchpad/open.png') }}" alt="Expand" class="icon">
+                    </summary>
+
+                    <p class="para">If your Launchpad doesn't generate at least 5 qualified lead inquiries within 30
+                        days of launch, I will provide an <strong>additional month of free optimization and strategy
+                            support</strong> until it performs. This is backed by my Performance Promise Guarantee.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    {% include 'components/footer.html' %}
+    <span class="glowlight" id="bottom-glowlight"></span>
+</body>
+
+</html>

@@ -48,6 +48,11 @@ def services():
     flash("This site is under development, some functions may not work", "warning")
     return render_template('pages/services.html')
 
+# | SPEICIFIC PROGRAM ROUTE
+@router.route('/services/<program>')
+def show_program(program):
+    return render_template(f'services/{program}.html')
+
 # & ABOUT PAGE ROUTE
 @router.route('/about/')
 def about():
