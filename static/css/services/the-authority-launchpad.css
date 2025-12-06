@@ -189,6 +189,47 @@
 
 .pricing .head {text-align: center;}
 
+.pricing .body .plan {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.pricing .body .plan#core-launchpad {
+    box-shadow: 0 0 10px var(--primary);
+    border: 2px solid var(--secondary);
+    position: relative;
+}
+
+.pricing .body .plan#core-launchpad::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: calc(50% - 123px / 2);
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: var(--secondary);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+}
+
+.pricing .body .plan#core-launchpad .btn.fl {background-color: var(--secondary); }
+
+.pricing .plan .head {text-align: center;}
+
+.pricing .body .sub-title {
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.pricing .btn.fl {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #112E5F;
+}
+
 
 /* | INFO-SEC */
 

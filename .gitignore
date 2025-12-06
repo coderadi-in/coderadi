@@ -4,3 +4,4 @@ __pycache__/
 concept.txt
 db/
 vfs.py
+pricing.md
