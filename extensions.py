@@ -37,7 +37,7 @@ class Project(db.Model):
     Holds the details of project built by coderadi.
 
     ## Params
-    - `id` [`primary_key`, `String(100)`]: Id of row.
+    - `id` [`primary_key`, `Integer`]: Id of row.
     - `cover` [`String(100)`, `required`]: Cover image of project.
     - `title` [`String(100)`, `required`]: Title of project.
     - `desc` [`TEXT`, `required`]: Description of project.
@@ -61,6 +61,26 @@ class Project(db.Model):
     tech_stack = db.Column(db.JSON, nullable=False)
     external = db.Column(db.Boolean, default=False)
     url = db.Column(db.String(100))
+
+# | 'THE AUTHORITY LAUNCHPAD' SIGNUP DATABASE MODEL
+class TheAuthorityLaunchpad(db.Model):
+    """
+    ###### coderadi
+    Holds the details of signup froms filled by The Authority Launchpad users
+
+    ## Params
+    - `id`: [`primary_key`, `Integer`]: Id of row.
+    - `plan`: [`String(10)`, `required`]: Selected plan.
+    - `name`: [`String(50)`, `required`]: Name of applicant.
+    - `email`: [`String(100)`, `required`]: Email of applicant.
+    - `phone`: [`String(20)`]: Phone number of applicant.
+    """
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    plan = db.Column(db.String(10), nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    phone = db.Column(db.String(20))
 
 # & DEFINING SOME CONSTANTS
 REFERRALS = {

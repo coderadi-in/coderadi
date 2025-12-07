@@ -24,11 +24,23 @@ def signup_authority_launchpad():
     plan = request.form.get('plan')
     name = request.form.get('full-name')
     email = request.form.get('email')
-    phone = request.form.get('phone')
+    phone = request.form.get('phone', 'not-provided')
 
-    print(plan)
-    print(name)
-    print(email)
-    print(phone)
+    new_application = TheAuthorityLaunchpad(
+        plan=plan,
+        name=name,
+        email=email,
+        phone=phone
+    )
 
-    return redirect('/services/the-authority-launchpad')
+    db.session.add(new_application)
+    db.session.commit()
+
+    notify(f"""New application for `The Authority Launchpad | Fitness edition` is filled on your `portfolio` site.
+Selected plan: {plan}
+Name: {name}
+Email: {email}
+Phone: {phone}""")
+
+    flash("Your application has be recorded. We'll get in touch within 24 hours.", "success")
+    return redirect('/services/the-authority-launchpad/')

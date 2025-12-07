@@ -27,6 +27,7 @@
 }
 
 *::-webkit-scrollbar {display: none;}
+*::selection {background-color: transparent;}
 
 body {
     background-color: var(--background);
