@@ -6,8 +6,9 @@ from extensions import *
 import os
 
 # ? IMPORTING ROUTES
-from router import router
-from api import api
+from routers.router import router
+from routers.api import api
+from routers.services import services
 
 # ! ───────────────────────────────┐
 # ! LOADING VIRTUAL ENVIRONMENT    │
@@ -31,3 +32,4 @@ with server.app_context():
 # ! BINDING ROUTER
 server.register_blueprint(router)
 server.register_blueprint(api)
+server.register_blueprint(services)

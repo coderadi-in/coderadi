@@ -39,6 +39,12 @@
     );
 }
 
+.sub-title {
+    font-weight: bold;
+    color: var(--secondary);
+    font-family: "Inter", sans-serif;
+}
+
 .icon {width: 24px;}
 
 
@@ -219,11 +225,6 @@
 
 .pricing .plan .head {text-align: center;}
 
-.pricing .body .sub-title {
-    font-weight: bold;
-    color: var(--secondary);
-}
-
 .pricing .btn.fl {
     width: fit-content;
     margin: 0 auto;
@@ -248,6 +249,73 @@
 }
 
 .info-sec .info .icon-content .icon {width: 50px;}
+
+
+/* | SIGNUP */
+
+.signup .head {text-align: center;}
+
+.signup .form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.signup .plans-section .plan {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 2px solid var(--border);
+}
+
+.signup .application-section {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--surface);
+    border: 2px solid var(--border);
+}
+
+.signup .btn.fl {
+    width: fit-content;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+.signup .real-radio {display: none;}
+
+.signup .real-radio:checked + .plan {border: 2px solid var(--primary);}
+
+.signup .fake-radio {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.signup .real-radio:checked + .plan .fake-radio {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.signup .fake-radio::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-image: url('/static/assets/services/the-authority-launchpad/select.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+}
+
+.signup .real-radio:checked + .plan .fake-radio::after {
+    transform: translate(-50%, -50%) scale(1);
+}
 
 
 /* | FAQs */
