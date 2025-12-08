@@ -10,7 +10,6 @@ services = Blueprint('services', __name__, url_prefix='/services')
 # & SERVICES PAGE ROUTE
 @services.route('/')
 def services_page():
-    flash("This site is under development, some functions may not work", "warning")
     return render_template('pages/services.html')
 
 # & SPEICIFIC PROGRAM ROUTE
