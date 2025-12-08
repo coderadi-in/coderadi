@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 &bull; System Error</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/err.css') }}">
+</head>
+<body class="flex">
+    <span class="glowlight" id="top-glowlight"></span>
+
+    <div class="content column center gap-20">
+        <h1 class="h1">500</h1>
+        <h2 class="h2">System Error</h2>
+        <p class="para">A temporary server-side error has been detected. We'll fix this out as soon as possible. Here's what you can do now:</p>
+
+        <div class="res-row h-center gap-10">
+            <a href="#" class="link btn fl" onclick="window.location.reload()">Refresh the page</a>
+            <a href="/" class="link btn ot">Back Home</a>
+        </div>
+
+        <a href="/contact/?ref=error" class="ulink">Report this issue</a>
+    </div>
+
+    <span class="glowlight" id="bottom-glowlight"></span>
+</body>
+</html>

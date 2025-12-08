@@ -87,6 +87,7 @@ REFERRALS = {
     "work": "I wanna work with you.",
     "connect": "I have a project to discuss with you.",
     "project": "I wanna build a project with you.",
+    "error": "I've to report an error in your site."
 }
 
 # * FUNCTION TO SEND WHATSAPP NOTIFICATIONS

@@ -1,35 +1,49 @@
-body {background-color: var(--bg-dark);}
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    padding: 50px;
+}
 
-.main {
+.glowlight {
+    position: fixed;
+    width: max(250px, 20vw);
+    height: max(250px, 20vw);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+#top-glowlight {
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        circle at top left,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
+#bottom-glowlight {
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(
+        circle at bottom right,
+        #226CE0A0 0%,
+        #5863F857 30%,
+        transparent 80%
+    );
+}
+
+.content {
     text-align: center;
     width: 100%;
 }
 
-.content {
-    background-color: var(--bg-dark);
-    color: var(--text-d);
-    text-align: center;
-    padding: 50px;
-}
+.h1 {font-size: 10rem;}
+.para {width: max(50%, 250px);}
 
-#error-code {
-    font-size: 10rem;
-    background-image: url('/static/assets/images/hero.png');
-    background-position: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-}
-
-.icon-content {
-    background-color: var(--surface);
-    box-shadow: 0 0 10px #5B86E479;
-    padding: 10px;
-    border-radius: 50px;
-}
-
-.ot {
-    color: var(--text-d);
-    border: 1px solid var(--border-d);
+@media (max-width: 425px) {
+    body {padding: 30px;}
 }
