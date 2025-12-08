@@ -42,5 +42,5 @@ Name: {name}
 Email: {email}
 Phone: {phone}""")
 
-    flash("Your application has be recorded. We'll get in touch within 24 hours.", "success")
+    flash("Your application has been recorded. We'll get in touch within 24 hours.", "success")
     return redirect('/services/the-authority-launchpad/')
