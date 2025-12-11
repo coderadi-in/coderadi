@@ -138,6 +138,26 @@ body {
     margin: auto;
 }
 
+.main .signup-form {
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.main .signup-form .form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.main .signup-form .check-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+}
+
+.main .signup-form .btn {border-radius: 5px;}
+
 .main .cta {
     padding: 20px;
     border-radius: 20px;
@@ -208,5 +228,10 @@ body {
 
     .main .benefits .benefits-list {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .main .signup-form {
+        padding: 20px;
+        border-radius: 8px;
     }
 }

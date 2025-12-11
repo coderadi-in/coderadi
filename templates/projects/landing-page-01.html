@@ -57,7 +57,7 @@
             <div class="left column gap-20">
                 <h3 class="h3">No gym? No problem. Home workouts available.</h3>
                 <h1 class="h1">Transform Your Body in 8 Weeks — No Guesswork.</h1>
-                <p class="para">Personalised training + diet plan designed for your lifestyle. Guaranteed progress.</p>
+                <p class="para">Personalized training + diet plan designed for your lifestyle. Guaranteed progress.</p>
                 <a href="#book" class="link btn fl">Book Your Free Fitness Consultation</a>
             </div>
 
@@ -89,7 +89,7 @@
                             alt="Workout" class="icon">
                     </div>
 
-                    <h3 class="h3">Personalised workouts</h3>
+                    <h3 class="h3">Personalized workouts</h3>
                     <p class="para">Custom plans tailored to your goals, fitness level, and equipment access.</p>
                 </div>
 
@@ -248,7 +248,7 @@
                         <li class="row gap-10">
                             <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
                                 alt="Checked" class="icon">
-                            <span class="text">Personalised meal plan</span>
+                            <span class="text">Personalized meal plan</span>
                         </li>
 
                         <li class="row gap-10">
@@ -298,6 +298,61 @@
             </div>
         </section>
 
+        <section class="signup-form column gap-20">
+            <h2 class="h2">Let's build your best self.</h2>
+
+            <form action="#" class="form">
+                <div class="block column gap-10">
+                    <div class="form-elem column gap-10">
+                        <label for="plan-type">Select a plan*</label>
+                        <select required name="plan-type" id="plan-type" class="input">
+                            <option value="starter">Starter</option>
+                            <option value="pro">Pro</option>
+                            <option value="elite">Elite</option>
+                        </select>
+                    </div>
+
+                    <div class="form-elem column gap-10">
+                        <span class="text">Select your goals*</span>
+                        
+                        <div class="row gap-10 check-input">
+                            <input type="checkbox" name="weight-loss" id="weight-loss" class="input">
+                            <label for="weight-loss">Weight Loss</label>
+                        </div>
+                        
+                        <div class="row gap-10 check-input">
+                            <input type="checkbox" name="muscle-gain" id="muscle-gain" class="input">
+                            <label for="muscle-gain">Muscle Gain</label>
+                        </div>
+                        
+                        <div class="row gap-10 check-input">
+                            <input type="checkbox" name="calisthenics" id="calisthenics" class="input">
+                            <label for="calisthenics">Calisthenics</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="block column gap-10">
+                    <div class="form-elem column gap-10">
+                        <label for="name">Your name*</label>
+                        <input required type="text" name="name" id="name" class="input" placeholder="e.g., John Doe">
+                    </div>
+                    
+                    <div class="form-elem column gap-10">
+                        <label for="email">Your email*</label>
+                        <input required type="email" name="email" id="email" class="input" placeholder="johndoe@example.com">
+                    </div>
+                    
+                    <div class="form-elem column gap-10">
+                        <label for="phone">Your number*</label>
+                        <input required type="tel" name="phone" id="phone" class="input" placeholder="+91 98765 12345">
+                    </div>
+
+                    <button type="submit" class="btn fl">Apply now</button>
+                </div>
+            </form>
+        </section>
+
         <section class="faqs column gap-10 v-center">
             <h1 class="h1">Frequently asked questions</h1>
 
@@ -337,7 +392,7 @@
         <section class="cta column v-center gap-20">
             <h1 class="h1">Ready to build your best self?</h1>
             <p class="para">Stop waiting for 'the right time'. The right time is now. Apply for coaching today and let's start building the strong, confident, and healthy body you deserve.</p>
-            <a href="#" class="link btn fl">Apply for coaching</a>
+            <a href="#signup-form" class="link btn fl">Apply for coaching</a>
         </section>
     </main>
 
