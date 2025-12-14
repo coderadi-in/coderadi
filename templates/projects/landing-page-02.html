@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43FKW98F8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-43FKW98F8P');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+    <meta name="author" content="coderadi">
+    <meta name="theme-color" content="#0E0E10">
+    <!-- <meta name="google-site-verification" content="your_verification_code"> -->
+    <meta name="keywords"
+        content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, startup, landing-page, startup-landing-page">
+
+    <meta name="description"
+        content="Experience the premium solution for your daily tasks with real-time analytics and secure infrastructure. Designed for modern teams.">
+
+    <title>coderadi &bull; Startup landing page</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects/landing-page-02.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="section-content row h-sb">
+            <div class="app-title row gap-10">
+                <span class="material-symbols-outlined fl-icon">rocket_launch</span>
+                <span class="title">NexusStart</span>
+            </div>
+
+            <div class="row gap-20">
+                <a href="#" class="link nav">Features</a>
+                <a href="#" class="link nav">Testimonials</a>
+                <a href="#" class="link nav">About</a>
+                <a href="#start" class="link btn fl">Get started</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main column gap-100">
+        <section class="hero">
+            <section class="section-content column gap-50">
+                <div class="head column gap-10 v-center">
+                    <span class="text tag">v2 is now live</span>
+                    <h1 class="h1">Transform your <span class="highlight">Workflow</span> today</h1>
+                    <p class="para">Experience the premium solution for your daily tasks with real-time analytics and secure infrastructure. Designed for modern teams.</p>
+
+                    <div class="res-row gap-10">
+                        <a href="#" class="link btn fl">Get started</a>
+                        <a href="#" class="link btn ot">Learn more</a>
+                    </div>
+                </div>
+
+                <img src="{{ url_for('static', filename='assets/projects/landing-page-02/hero.png') }}" alt="Workflow image" class="img">
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>

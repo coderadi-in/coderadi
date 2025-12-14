@@ -1,0 +1,74 @@
+/* | BASE */
+
+:root {
+    --primary: #0D7FF2;
+    --light: #F5F7F8;
+    --dark: #101922;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    max-width: 100%;
+}
+
+.h1, .h2, .h3 {font-family: "Inter", sans-serif;}
+
+.section-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.link, .ulink {color: var(--dark);}
+
+/* | HEADER */
+
+.header {
+    background-color: #FFF;
+    padding: 15px;
+    border-bottom: 1px solid var(--dark);
+}
+
+.header .app-title .fl-icon {
+    color: var(--primary);
+    background-color: #BBDDFF;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 2rem;
+}
+
+.header .app-title .title {
+    font-size: var(--f2);
+    font-weight: bold;
+}
+
+.main {padding: 50px;}
+/* | MAIN [HERO] */
+
+.hero .tag {
+    background-color: #BBDDFF;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+.hero .h1 {
+    font-size: min(7rem, 15vw);
+    font-weight: bold;
+}
+
+.hero .highlight {
+    background: -webkit-linear-gradient(135deg, var(--primary), #BBDDFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero .para {font-size: 1.5rem;}
+
+.hero .img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
