@@ -87,6 +87,7 @@
     position: relative;
     padding: 10px;
     border-radius: 8px;
+    height: fit-content;
 }
 
 .projects .project-grid .project::before,
@@ -119,6 +120,8 @@
 .projects .project-grid .project .img {
     border-radius: 8px;
     box-shadow: 0px 0px 25px -10px var(--text-secondary);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .projects .project-grid .project .text-content {
