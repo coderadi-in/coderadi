@@ -84,7 +84,11 @@ body {
     text-align: center;
 }
 
-.trust .companies {width: 100%;}
+.trust .companies {
+    width: 100%;
+    overflow-x: auto;
+}
+
 .trust .company * {
     color: #C0C0C0;
     font-weight: bold;
@@ -139,10 +143,104 @@ body {
     border-radius: 8px;
     background-color: #FFF;
     border: 1px solid #BBDDFF;
+    height: fit-content;
 }
 
 .testimonials .testimonial .img {
     width: 50px;
     height: 50px;
     border-radius: 50px;
+}
+
+.testimonials .testimonial .para.bold {font-weight: bold;}
+
+/* | MAIN [PRICING] */
+.pricing {background-color: #FFF;}
+.pricing .body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.pricing .body .plan {
+    height: fit-content;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 20px;
+}
+
+.pricing .body .plan .flex {align-items: end;}
+.pricing .body .plan .h1 {line-height: 30px;}
+
+.pricing .body .plan .btn {
+    text-align: center;
+    border-radius: 8px;
+}
+
+.pricing .plan#popular {
+    position: relative;
+    border: 1px solid var(--primary);
+}
+
+.pricing .plan#popular::before {
+    content: "MOST POPULAR";
+    position: absolute;
+    top: -15px;
+    left: calc(50% - 73px);
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: var(--primary);
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+}
+
+/* | MAIN [START] */
+.start {padding: 0 100px 100px 100px;}
+.start .section-content {
+    background-color: var(--primary);
+    color: #FFF;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.start .form {width: max(280px, 50%);}
+.start .input {
+    width: 100%;
+    color: var(--dark);
+    border: none;
+    background-color: #FFF;
+}
+
+.start .btn {
+    background-color: var(--dark);
+    padding: 10px 20px;
+    border-radius: 8px;
+    min-width: 121px;
+}
+
+/* | FOOTER */
+.footer {background-color: #FFF;}
+.footer .section-content {padding: 15px;}
+
+/* & RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .hero .h1 {font-size: min(5rem, 10vw);}
+}
+
+@media (max-width: 768px) {
+    .header .nav {display: none;}
+
+    .about .section-content {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .start {padding: 0 20px 100px 20px;}
+}
+
+@media (max-width: 568px) {
+    .section-content {padding: 20px;}
+    .hero .para {width: 100%;}
+    .about .img {width: 100%;}
+    .start .form {flex-direction: column;}
+    .start .form * {width: 100%;}
 }
