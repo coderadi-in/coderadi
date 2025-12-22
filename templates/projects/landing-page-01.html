@@ -1,402 +1,647 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="dark" lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43FKW98F8P"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-43FKW98F8P');
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Elite Fitness - Premium Training</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0f1218", /* Midnight blue/black tone */
+                        "surface-dark": "#1a1f29", /* Charcoal blue tone for cards */
+                        "surface-darker": "#131720", /* Slightly darker surface */
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
     </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="language" content="en">
-    <meta name="author" content="coderadi">
-    <meta name="theme-color" content="#0E0E10">
-    <!-- <meta name="google-site-verification" content="your_verification_code"> -->
-    <meta name="keywords"
-        content="india, uttar-pradesh, lucknow, gorakhpur, gkp, software, software-developer, web-developer, coderadi, coderadi.in, python, html-css, flask, fitness, landing-page, fitness-landing-page">
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
 
-    <meta name="description"
-        content="Hi, I'm Aditya, and this is a fitness landing page demo, I built this demo project especially for fitness coaches trying to scale digitally.">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
 
-    <title>coderadi &bull; Fitness landing page demo</title>
-    <link rel="icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/icon.ico') }}" type="image/x-icon">
+        /* Custom scrollbar for dark theme feeling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects/landing-page-01.css') }}">
+        ::-webkit-scrollbar-track {
+            background: #0f1218;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f4c025;
+        }
+    </style>
 </head>
 
-<body>
-    <header class="header row h-sb">
-        <div class="app-title row gap-10">
-            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/logo.png') }}" alt="Site logo"
-                class="logo">
-            <h1 class="h1">LimitlessFit</h1>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased overflow-x-hidden">
+    <!-- Navbar -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="text-primary">
+                    <span class="material-symbols-outlined text-4xl">fitness_center</span>
+                </div>
+                <span class="text-white text-xl font-extrabold tracking-tight uppercase">ELITE<span
+                        class="text-primary">FIT</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide"
+                    href="#services">Services</a>
+                <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide"
+                    href="#coaches">Coaches</a>
+                <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide"
+                    href="#testimonials">Stories</a>
+                <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide"
+                    href="#contact">Membership</a>
+            </div>
+            <button
+                class="hidden md:flex bg-primary hover:bg-yellow-400 text-background-dark px-6 py-2.5 rounded font-bold text-sm uppercase tracking-wide transition-all transform hover:scale-105">
+                Join Now
+            </button>
+            <button class="md:hidden text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
         </div>
-
-        <div class="options row gap-20">
-            <ul class="list row gap-10">
-                <li><a href="#about" class="link">About</a></li>
-                <li><a href="#plans" class="link">Plans</a></li>
-                <li><a href="#faqs" class="link">FAQs</a></li>
-            </ul>
-
-            <a href="#cta" class="link btn fl">Get quote</a>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image/Video Placeholder -->
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center"
+                data-alt="Dark moody gym interior with athlete lifting weights"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAV_eChwxlEgdstjvoiEI3MkdyAEzpqKNhctILTFu6ItxeBo98gvQ7x460yDHZUBVRUEct8xxelVQyZRR4X3W6UXoqsgbpH-grOQEmVQgaBlq7QYDV7OApjovWLBmuwDeKkUQBQl26VQPP1wo1koyy_FRzSPEPQQoc1S_SldBDEmwRwD3MfH9u7gQSXdUllwmYCan08RHO1MJHwyHrXynM70zEuJ8ZGi0VT69jIjYyBlcYoJnILUlgLeHaouNmmQ75vqlaL7bHEpo');">
+            </div>
+            <!-- Overlay -->
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-background-dark/70 via-background-dark/50 to-background-dark">
+            </div>
+        </div>
+        <div class="relative z-10 container mx-auto px-6 text-center max-w-4xl pt-20">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Now Accepting New Members
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-6">
+                REDEFINE <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">YOUR LIMITS</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10">
+                Elite training facilities for the modern athlete. Experience the future of fitness with personalized
+                coaching and state-of-the-art technology.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button
+                    class="bg-primary hover:bg-yellow-400 text-background-dark px-8 py-4 rounded font-bold text-base uppercase tracking-wide transition-all min-w-[200px]">
+                    Start Your Journey
+                </button>
+                <button
+                    class="px-8 py-4 rounded font-bold text-base uppercase tracking-wide text-white border border-white/20 hover:bg-white/10 transition-all min-w-[200px] flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">play_circle</span>
+                    Watch Film
+                </button>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce flex flex-col items-center gap-2">
+            <span class="text-xs uppercase tracking-widest">Scroll</span>
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
         </div>
     </header>
-    <hr class="divider">
-
-    <main class="main column gap-50">
-        <section class="hero row h-sb gap-50">
-            <div class="left column gap-20">
-                <h3 class="h3">No gym? No problem. Home workouts available.</h3>
-                <h1 class="h1">Transform Your Body in 8 Weeks — No Guesswork.</h1>
-                <p class="para">Personalized training + diet plan designed for your lifestyle. Guaranteed progress.</p>
-                <a href="#book" class="link btn fl">Book Your Free Fitness Consultation</a>
+    <!-- Features / Services Grid -->
+    <section class="py-24 bg-background-dark relative" id="services">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-primary font-bold tracking-widest text-sm uppercase mb-3">Our Services</h2>
+                    <h3 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Comprehensive <span
+                            class="text-gray-500">Training Solutions</span></h3>
+                </div>
+                <div class="md:text-right">
+                    <a class="inline-flex items-center gap-2 text-white border-b border-primary pb-1 hover:text-primary transition-colors"
+                        href="#">
+                        View All Programs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
             </div>
-
-            <div class="right">
-                <img src="{{ url_for('static', filename='assets/projects/landing-page-01/hero.png') }}"
-                    alt="Hero section image" class="img">
-            </div>
-        </section>
-
-        <section class="about row gap-20">
-            <div class="left"><img src="{{ url_for('static', filename='assets/projects/landing-page-01/image.png') }}"
-                    alt="It's me" class="img"></div>
-
-            <div class="right column gap-10">
-                <h3 class="h3">Meet your coach, John doe</h3>
-                <p class="para">With over a decade of experience and a passion for helping people achieve their peak
-                    physical condition, I am dedicated to providing you with the tools and support you need to succeed.
-                </p>
-            </div>
-        </section>
-
-        <section class="benefits column gap-20">
-            <h1 class="h1">What you get with my coaching</h1>
-
-            <div class="benefits-list gap-10">
-                <div class="benefit column gap-10">
-                    <div class="icon-content">
-                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/workout.png') }}"
-                            alt="Workout" class="icon">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="group relative overflow-hidden rounded-xl h-[400px] cursor-pointer">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Personal trainer helping client with weights"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCc26-_AKN59Vk2UCiVY0SEvZBcViguvB9ExnXSet__Xc2u0QsN0Vrvqi9FrIKP6M-TSbPETZqsEgmJ82smjT-liQxVi027XcUoqUEaC2eoCRKaMWxv1SjL-12gqoSDShHkm5Lqybh2taOpXVOXWIwzSpq9jUMr9kD7TRLpO8iV-4osvXzxnN8jZ6jMT6ikKXkviB8TL3qjd1ZzLF0HuXP1EVPbfW2oVg6ODRLP6jZ3-Fu8WWNrwdBeiP_SeUCZV4p_O9qmygd3Gxo');">
                     </div>
-
-                    <h3 class="h3">Personalized workouts</h3>
-                    <p class="para">Custom plans tailored to your goals, fitness level, and equipment access.</p>
-                </div>
-
-                <div class="benefit column gap-10">
-                    <div class="icon-content">
-                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/menu_book.png') }}"
-                            alt="Diet" class="icon">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80">
                     </div>
-
-                    <h3 class="h3">Customized Diet Plans</h3>
-                    <p class="para">Nutrition guidance that fits your lifestyle and preferences, no extreme
-                        restrictions.</p>
-                </div>
-
-                <div class="benefit column gap-10">
-                    <div class="icon-content">
-                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/support_agent.png') }}"
-                            alt="Support" class="icon">
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div
+                            class="w-12 h-12 rounded bg-surface-dark flex items-center justify-center text-primary mb-4 border border-white/10 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                            <span class="material-symbols-outlined">accessibility_new</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Personal Training</h4>
+                        <p
+                            class="text-gray-400 text-sm leading-relaxed mb-4 opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300">
+                            1-on-1 coaching with biometric tracking and customized progression plans tailored to your
+                            physiology.
+                        </p>
+                        <span
+                            class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
                     </div>
-
-                    <h3 class="h3">24/7 WhatsApp Support</h3>
-                    <p class="para">Direct access to me for questions, motivation, and accountability whenever you need
-                        it.</p>
                 </div>
-
-                <div class="benefit column gap-10">
-                    <div class="icon-content">
-                        <img src="{{ url_for('static', filename='assets/projects/landing-page-01/monitoring.png') }}"
-                            alt="Workout" class="icon">
+                <!-- Service 2 -->
+                <div class="group relative overflow-hidden rounded-xl h-[400px] cursor-pointer">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Group fitness class lifting kettlebells"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQD7GWB0DdntQukExq-zCPXRwjM8LXZt02YmljyBw6ZpiRyFJL7iLZeBLw9BBlldq9Fcrupa7q6Pp_AtFvRA3EwHNKhDRqdi3AJoJIVTA348AxmqN-NrM283UU6-ER9c3oeLlpuExmrFQ1Y_vcro6KVF57Yu7kV1TL8ZPI6s9HabieqNDYrq6i45exaRoFP1Sfa_DckK4ITx9ttxWQJGtYrbmptq7jk79IL4ums8iwej7DfG8gCNQqnUUHjC-pDeTU_hjFSi_2juY');">
                     </div>
-
-                    <h3 class="h3">Progress Tracking</h3>
-                    <p class="para">Weekly check-ins and data analysis to ensure you're consistently moving forward.</p>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div
+                            class="w-12 h-12 rounded bg-surface-dark flex items-center justify-center text-primary mb-4 border border-white/10 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Small Group</h4>
+                        <p
+                            class="text-gray-400 text-sm leading-relaxed mb-4 opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300">
+                            High-energy sessions limited to 8 people for personalized attention in a motivating team
+                            environment.
+                        </p>
+                        <span
+                            class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="group relative overflow-hidden rounded-xl h-[400px] cursor-pointer">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Relaxing spa area with massage table"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9sjSdoLdlG7ji9FmlrvAfCc8hArb4qfVOWuhrUb8xyGcZ3Bv3DLjhf9zJTritHk68Mf8aiRtdxk2Zd9PFMtROpqYijV1Kw-7V0sS2bpavJjZhUobK07mdTjt2HrWIktkJte1RPwUbcAelvlApPewwYJpvNfFvpJh7J_hz1yOsbQSctSs9IfYc9RQr6n4AC9u_XJSdasITVaAKsP6PqCyJK74pfccEilouHw2UEoC7e3VhZ_MRUcz6Njjd9OzZFODgouVd6jM9r1I');">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div
+                            class="w-12 h-12 rounded bg-surface-dark flex items-center justify-center text-primary mb-4 border border-white/10 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                            <span class="material-symbols-outlined">spa</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Recovery Lounge</h4>
+                        <p
+                            class="text-gray-400 text-sm leading-relaxed mb-4 opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300">
+                            Optimize your rest with cryotherapy, infrared saunas, and sports massage therapy.
+                        </p>
+                        <span
+                            class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="group relative overflow-hidden rounded-xl h-[400px] cursor-pointer">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Fresh healthy meal prep ingredients on table"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsMnB5LprOL_7d2TGcjsyPBU3sBj3dSRSBQuZxROrE1Jqqr6LUjR7eUtMQ7ERzD5WEmo9_Gk3QujgaTjezuP21ZWH-paGv4RB_cj1f1v6ha13M8iRW5wypG2XA3E24mDAljQFrYqfT2bBPTdysqunO_fUjNxo70tDWOYHwEZg5FVdNQCN4fu_914maiLheoljwk44IZfWEmmIcUNttWdqdTHyHiyVibxbxmdX4twJnRv-1em6JJA7a6er-TroYu6JA2E2HF3oHYAE');">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div
+                            class="w-12 h-12 rounded bg-surface-dark flex items-center justify-center text-primary mb-4 border border-white/10 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                            <span class="material-symbols-outlined">restaurant_menu</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Nutrition</h4>
+                        <p
+                            class="text-gray-400 text-sm leading-relaxed mb-4 opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300">
+                            Metabolic analysis and chef-prepared meal prep services to fuel your body correctly.
+                        </p>
+                        <span
+                            class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="transformations column gap-20">
-            <h1 class="h1">Real clients, real transformation</h1>
-
-            <div class="res-row gap-20">
-                <div class="trans">
-                    <h2 class="h2">Transformation placeholder</h2>
-                </div>
-
-                <div class="trans">
-                    <h2 class="h2">Transformation placeholder</h2>
-                </div>
-
-                <div class="trans">
-                    <h2 class="h2">Transformation placeholder</h2>
-                </div>
+        </div>
+    </section>
+    <!-- Coaches Section -->
+    <section class="py-24 bg-surface-darker" id="coaches">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-primary font-bold tracking-widest text-sm uppercase mb-3">Expert Guidance</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Meet The <span
+                        class="text-gray-500">Elite Team</span></h3>
+                <p class="text-gray-400">Our coaches are industry leaders with decades of combined experience in
+                    biomechanics, nutrition, and performance psychology.</p>
             </div>
-        </section>
-
-        <section class="testimonials column gap-20">
-            <h1 class="h1">What my clients say</h1>
-
-            <div class="res-row gap-20">
-                <div class="review column gap-20">
-                    <div class="top row gap-10">
-                        <div class="placeholder"></div>
-                        <div class="column">
-                            <span class="text">Jessica M.</span>
-                            <span class="text">jessical@example.com</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Coach 1 -->
+                <div
+                    class="bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors group">
+                    <div class="h-[400px] w-full bg-cover bg-top relative"
+                        data-alt="Professional female fitness coach portrait"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4Iw3HxLvb4y7i50Xb99P7ObBIe9GcIzRPjZRUA-DhGc2sv8hIB0jhoo0XdNXf0gh91tNFRnDjqDvSIijjak4yZi5yhh_vP9Rzz5sEs6Kj3c2fGfGMxjt5YxzrrxYejrNkGecA4aZA56zvIUzfs5hSNVzkEc0ecmdKpK3WmX_YaQ0nzLUEoQaREvBj2rQFPVWKx51lK8YXmay-vA-7HNstJNL8NF2F-wS7bR74OqX-Un-XmU5eydZFj1Ydu-Rfy8rDH8aLX9Z5G3U');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2 py-1 bg-white/10 text-white text-xs rounded backdrop-blur-sm border border-white/10">Strength</span>
+                                <span
+                                    class="px-2 py-1 bg-white/10 text-white text-xs rounded backdrop-blur-sm border border-white/10">Mobility</span>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="down">
-                        <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus
-                            quidem architecto, quod, veritatis quo ex rem dicta minus consectetur, cumque repudiandae
-                            enim unde numquam.</p>
-                    </div>
-                </div>
-
-                <div class="review column gap-20">
-                    <div class="top row gap-10">
-                        <div class="placeholder"></div>
-                        <div class="column">
-                            <span class="text">Ben T.</span>
-                            <span class="text">ben@example.com</span>
+                    <div class="p-6 relative">
+                        <div
+                            class="absolute -top-8 right-6 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-background-dark font-bold shadow-lg shadow-primary/20 z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">add</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Alex Rivera</h4>
+                        <p class="text-primary text-sm uppercase font-bold tracking-wider mb-4">Head Coach</p>
+                        <p class="text-gray-400 text-sm mb-6">Former Olympian specializing in explosive power and
+                            athletic conditioning.</p>
+                        <div class="flex gap-4 border-t border-white/5 pt-4">
+                            <a class="text-gray-500 hover:text-white transition-colors" href="#"><span
+                                    class="material-symbols-outlined text-lg">public</span></a>
+                            <!-- representing social web -->
+                            <a class="text-gray-500 hover:text-white transition-colors" href="#"><span
+                                    class="material-symbols-outlined text-lg">mail</span></a>
                         </div>
                     </div>
-
-                    <div class="down">
-                        <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus
-                            quidem architecto, quod, veritatis quo ex rem dicta minus consectetur, cumque repudiandae
-                            enim unde numquam.</p>
-                    </div>
                 </div>
-
-                <div class="review column gap-20">
-                    <div class="top row gap-10">
-                        <div class="placeholder"></div>
-                        <div class="column">
-                            <span class="text">Chloe S.</span>
-                            <span class="text">chloe@example.com</span>
+                <!-- Coach 2 -->
+                <div
+                    class="bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors group">
+                    <div class="h-[400px] w-full bg-cover bg-top relative" data-alt="Male fitness coach in gym setting"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD03RCsXp0OtICPhQC4XD5RKzPak224erGTJY514gUVNFYCVVJpTK9qu6zyHMKHmRnn27nbBwCBO5BmTcAG9d-sOJPdAzhisASPSWtXrgrezGMZXiJzXVspZhslFUYMuliwOpRT-iYxiSs0bQTqF-yFC00Tdc7hU33FZyF80XTKqSwsRdc1Zur_LttMISNQVBiVQcIX_HiD2QT0WaQ7I86A64WkPYsRgyTljz3WiAREesoAVensjHeOPp0jUnbiC72oKIKNxCvj7aE');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2 py-1 bg-white/10 text-white text-xs rounded backdrop-blur-sm border border-white/10">HIIT</span>
+                                <span
+                                    class="px-2 py-1 bg-white/10 text-white text-xs rounded backdrop-blur-sm border border-white/10">Cardio</span>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="down">
-                        <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus
-                            quidem architecto, quod, veritatis quo ex rem dicta minus consectetur, cumque repudiandae
-                            enim unde numquam.</p>
+                    <div class="p-6 relative">
+                        <div
+                            class="absolute -top-8 right-6 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-background-dark font-bold shadow-lg shadow-primary/20 z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">add</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Marcus Thorne</h4>
+                        <p class="text-primary text-sm uppercase font-bold tracking-wider mb-4">Performance Specialist
+                        </p>
+                        <p class="text-gray-400 text-sm mb-6">Expert in metabolic conditioning and high-intensity
+                            interval training protocols.</p>
+                        <div class="flex gap-4 border-t border-white/5 pt-4">
+                            <a class="text-gray-500 hover:text-white transition-colors" href="#"><span
+                                    class="material-symbols-outlined text-lg">public</span></a>
+                            <a class="text-gray-500 hover:text-white transition-colors" href="#"><span
+                                    class="material-symbols-outlined text-lg">mail</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Coach 3 -->
+                <div
+                    class="bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors group">
+                    <div class="h-[400px] w-full bg-cover bg-top relative" data-alt="Female yoga and pilates instructor"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAu7HyKz2H0rbvXd-dXpoyulcaUy0Kba3bSuXokl37Zb1ilUjl3JMyZwbItLWkkjZ064MUUdcMq9Cj4a3Sz0_JjXMQPtWKSjG9iO5JdKfnnAzVphnu6mXVHh8xjcstI26qplPCAPcH98_lJo8oE6mIM5iCTfSZbokgrx5ft_gJwkmFBw6f_b8QGPqHlI8HyP5Ir25a7rfeL-Hr9VL-jZjblI-gZoC7dL7MzEHbqWjdS7yIrOPgE85AYGc8qBNlWqk6ttAFOgHBglgY');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2 py-1 bg-white/10 text-white text-xs rounded backdrop-blur-sm border border-white/10">Yoga</span>
+                                <span
+                                    class="px-2 py-1 bg-white/10 text-white text-xs rounded backdrop-blur-sm border border-white/10">Rehab</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div
+                            class="absolute -top-8 right-6 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-background-dark font-bold shadow-lg shadow-primary/20 z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">add</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-1">Sarah Jenkins</h4>
+                        <p class="text-primary text-sm uppercase font-bold tracking-wider mb-4">Wellness Director</p>
+                        <p class="text-gray-400 text-sm mb-6">Certified physiotherapist focused on injury prevention and
+                            holistic recovery.</p>
+                        <div class="flex gap-4 border-t border-white/5 pt-4">
+                            <a class="text-gray-500 hover:text-white transition-colors" href="#"><span
+                                    class="material-symbols-outlined text-lg">public</span></a>
+                            <a class="text-gray-500 hover:text-white transition-colors" href="#"><span
+                                    class="material-symbols-outlined text-lg">mail</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="plans column v-center gap-20">
-            <h1 class="h1 title">Find the right plan for you</h1>
-
-            <div class="flex h-center gap-20">
-                <div class="plan column gap-20">
-                    <div class="head column v-center">
-                        <h1 class="h1">starter</h1>
-                        <span class="text">For those new to fitness</span>
+        </div>
+    </section>
+    <!-- Testimonials / Social Proof -->
+    <section class="py-24 bg-background-dark border-y border-white/5" id="testimonials">
+        <div class="container mx-auto px-6">
+            <h2 class="text-white text-3xl font-bold mb-12 flex items-center gap-4">
+                <span class="w-12 h-[2px] bg-primary block"></span>
+                CLIENT SUCCESS STORIES
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div
+                    class="p-8 bg-surface-dark rounded-xl relative border border-white/5 hover:border-primary/20 transition-all">
+                    <span
+                        class="material-symbols-outlined text-6xl text-white/5 absolute top-6 right-6">format_quote</span>
+                    <div class="flex gap-1 mb-6 text-primary">
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
                     </div>
-
-                    <ul class="list column gap-10">
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Custom workout plan</span>
+                    <p class="text-gray-300 text-lg leading-relaxed italic mb-8 relative z-10">"The facility is
+                        state-of-the-art and the community is unmatched. I've never felt stronger or more supported in
+                        my fitness journey."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-cover bg-center" data-alt="Portrait of happy male client"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhZGEa3mvF8OIggFjtLz_XWRpJhsLZtnv4HiVqSF_Y33bO8eaQDW8occnu7VMfjArlc7HmM4475nYdoYyYatPi_zIWLKToGKZl0QeHH4w5HLy4moRuw0jLhtTyb_LnrsC00QTDehnkkjfRuIUrABrjim3tUQZbae4LjG28k6lHrEQbuhECN0lYZhoPLBb0qfeNDH8b8G8osuCeSWNN9-L9s1exkXYVFVBOhCeQnOGq_YGCPY39p2diRQBFSR09nq_Ol_GJfWlvDQ0');">
+                        </div>
+                        <div>
+                            <p class="text-white font-bold">David Chen</p>
+                            <p class="text-gray-500 text-sm">Member since 2021</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div
+                    class="p-8 bg-surface-dark rounded-xl relative border border-white/5 hover:border-primary/20 transition-all">
+                    <span
+                        class="material-symbols-outlined text-6xl text-white/5 absolute top-6 right-6">format_quote</span>
+                    <div class="flex gap-1 mb-6 text-primary">
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed italic mb-8 relative z-10">"Best investment I've
+                        made for my health. The coaches actually care about your progress and the equipment is top
+                        tier."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-cover bg-center" data-alt="Portrait of female client"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgZzg0a-4Ne8ZbR2cOVwV8Qv7eIyV9f6znqMt-bt7-W-oIPzoo42-UvMSkKRbWJVuxiBpq4Thxwn0r0NbGQxCl06QaVSn4RlT9H7kbNMd8BQ0fLkErlcWW3m8xu3bbz-vqsbDAQ9mHK_KD86KCRqLBBh8Ldi2WZCF2IBpbpAW4olWVoSLDqdGNpkw0T8bVoerXEv9zEpfRrw6jt5iXn8kQ65LDwnLmQh_2eY6gG3f42A_FX3m4g4iMwFE_edsoKSnj-KpZcBIShcc');">
+                        </div>
+                        <div>
+                            <p class="text-white font-bold">Elena Rodriguez</p>
+                            <p class="text-gray-500 text-sm">Member since 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div
+                    class="p-8 bg-surface-dark rounded-xl relative border border-white/5 hover:border-primary/20 transition-all">
+                    <span
+                        class="material-symbols-outlined text-6xl text-white/5 absolute top-6 right-6">format_quote</span>
+                    <div class="flex gap-1 mb-6 text-primary">
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                        <span class="material-symbols-outlined text-xl">star</span>
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed italic mb-8 relative z-10">"The recovery lounge is a
+                        game changer. Being able to go from a HIIT class straight to cryotherapy is the ultimate
+                        luxury."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-cover bg-center"
+                            data-alt="Portrait of male client smiling"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgF2C9TeD3G69MAXihShTvc7ZkMQ6L09ZN_IiRvGsTBA9foC__6EX6OJxjVZOB_EFwJEHrkTa_RTqftp8Lcaph5u56Dw43F-XTtL4iw1MIWo4arPpTDMRbzAYSrfIVnHguRIreZkEokwdM4Agc9r84AIGCCClgOVDuMvTQOGw3-iYmeGjdzEpBeCdBFftquofv4cHUKVRI8qYsFQR49r71qB8TkmQipq8jT0We989MQIC2rm7-dJKMoRU9RQQsxz89cpvLsAP7ZKA');">
+                        </div>
+                        <div>
+                            <p class="text-white font-bold">Michael Thorne</p>
+                            <p class="text-gray-500 text-sm">Member since 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Lead Capture Form -->
+    <section class="py-24 bg-surface-darker relative overflow-hidden" id="contact">
+        <!-- Decorative bg elements -->
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div
+                class="bg-surface-dark rounded-2xl shadow-2xl overflow-hidden border border-white/5 flex flex-col lg:flex-row">
+                <!-- Image Side -->
+                <div class="lg:w-5/12 relative min-h-[400px]">
+                    <div class="absolute inset-0 bg-cover bg-center" data-alt="Modern gym interior with neon lighting"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4obT4jnEwQ6yvi0TDuZDa2aND2JzTUo2rA7rpaRYSQRmqptwEJOJGLctSQ2q7OVOJy6a_HKjo43f0czveMNRH4SnEYfp0LAilEQFARz0xWG57gie8boNLnYq6C_yESwqi4u8yLqzpcturPwIqer3ek0XMLyv5fmR-uN0VKXQODTZMegOKbcR6JOOel8nJ0VBx3wwhzoIYVafaNTzbKlVm19Uhsb4I2bzZM28vlncw4Ot8H0RRafdvJZuj9bdn2FV0oGteh7XjczU');">
+                    </div>
+                    <div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-12 flex flex-col justify-end">
+                        <h3 class="text-3xl font-bold text-white mb-2">Exclusive Offer</h3>
+                        <p class="text-gray-200">Claim your complimentary 7-day pass and initial consultation worth
+                            $150.</p>
+                    </div>
+                </div>
+                <!-- Form Side -->
+                <div class="lg:w-7/12 p-10 lg:p-16">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-2">Start Your Transformation</h2>
+                        <p class="text-gray-400">Fill out the form below and one of our elite coaches will contact you
+                            within 24 hours.</p>
+                    </div>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase font-bold text-primary tracking-wider"
+                                    for="firstName">First Name</label>
+                                <input
+                                    class="w-full bg-background-dark border-0 border-b border-gray-700 text-white px-3 py-3 focus:ring-0 focus:border-primary transition-colors placeholder-gray-600"
+                                    id="firstName" placeholder="Jane" type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase font-bold text-primary tracking-wider"
+                                    for="lastName">Last Name</label>
+                                <input
+                                    class="w-full bg-background-dark border-0 border-b border-gray-700 text-white px-3 py-3 focus:ring-0 focus:border-primary transition-colors placeholder-gray-600"
+                                    id="lastName" placeholder="Doe" type="text" />
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase font-bold text-primary tracking-wider" for="email">Email
+                                Address</label>
+                            <input
+                                class="w-full bg-background-dark border-0 border-b border-gray-700 text-white px-3 py-3 focus:ring-0 focus:border-primary transition-colors placeholder-gray-600"
+                                id="email" placeholder="jane@example.com" type="email" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase font-bold text-primary tracking-wider" for="goal">Primary
+                                Goal</label>
+                            <select
+                                class="w-full bg-background-dark border-0 border-b border-gray-700 text-white px-3 py-3 focus:ring-0 focus:border-primary transition-colors cursor-pointer"
+                                id="goal">
+                                <option>Weight Loss</option>
+                                <option>Muscle Gain</option>
+                                <option>Endurance Training</option>
+                                <option>Sports Performance</option>
+                                <option>General Wellness</option>
+                            </select>
+                        </div>
+                        <div class="pt-4">
+                            <button
+                                class="w-full bg-primary hover:bg-yellow-400 text-background-dark font-bold text-lg py-4 rounded uppercase tracking-wide transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+                                type="button">
+                                Claim My Pass
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                            <p class="text-center text-gray-500 text-xs mt-4">By joining, you agree to our Terms of
+                                Service and Privacy Policy.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-background-dark border-t border-white/5 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="text-primary">
+                            <span class="material-symbols-outlined text-3xl">fitness_center</span>
+                        </div>
+                        <span class="text-white text-xl font-extrabold tracking-tight uppercase">ELITE<span
+                                class="text-primary">FIT</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Redefining fitness standards with premium facilities, expert coaching, and a supportive
+                        community dedicated to your success.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-darker transition-all"
+                            href="#">
+                            <span class="text-sm font-bold">IG</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-darker transition-all"
+                            href="#">
+                            <span class="text-sm font-bold">TW</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-darker transition-all"
+                            href="#">
+                            <span class="text-sm font-bold">YT</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Explore</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Training Programs</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Coaches</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Success Stories</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Membership Options</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            <span>123 Elite Blvd, Innovation District<br />Metro City, NY 10012</span>
                         </li>
-
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Nutrition guidelines</span>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">call</span>
+                            <span>+1 (555) 123-4567</span>
                         </li>
-
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Bi-weekly check-ins</span>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">mail</span>
+                            <span>membership@elitefit.com</span>
                         </li>
                     </ul>
-
-                    <a href="#" class="link btn fl">Choose plan</a>
                 </div>
-
-                <div class="plan column gap-20" id="popular">
-                    <div class="head column v-center">
-                        <h1 class="h1">Pro</h1>
-                        <span class="text">For dedicated results</span>
-                    </div>
-
-                    <ul class="list column gap-10">
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Custom workout &amp; cardio</span>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hours</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Mon - Fri</span>
+                            <span class="text-white font-medium">5:00 AM - 11:00 PM</span>
                         </li>
-
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Personalized meal plan</span>
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Saturday</span>
+                            <span class="text-white font-medium">6:00 AM - 9:00 PM</span>
                         </li>
-
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Weekly check-ins</span>
-                        </li>
-
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">24/7 WhatsApp support</span>
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Sunday</span>
+                            <span class="text-white font-medium">7:00 AM - 8:00 PM</span>
                         </li>
                     </ul>
-
-                    <a href="#" class="link btn fl">Choose plan</a>
-                </div>
-
-                <div class="plan column gap-20">
-                    <div class="head column v-center">
-                        <h1 class="h1">Elite</h1>
-                        <span class="text">For the ultimate transformation</span>
-                    </div>
-
-                    <ul class="list column gap-10">
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">All pro features</span>
-                        </li>
-
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Weekly video calls</span>
-                        </li>
-
-                        <li class="row gap-10">
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/check.png') }}"
-                                alt="Checked" class="icon">
-                            <span class="text">Supplement guidance</span>
-                        </li>
-                    </ul>
-
-                    <a href="#" class="link btn fl">Choose plan</a>
                 </div>
             </div>
-        </section>
-
-        <section class="signup-form column gap-20">
-            <h2 class="h2">Let's build your best self.</h2>
-
-            <form action="#" class="form">
-                <div class="block column gap-10">
-                    <div class="form-elem column gap-10">
-                        <label for="plan-type">Select a plan*</label>
-                        <select required name="plan-type" id="plan-type" class="input">
-                            <option value="starter">Starter</option>
-                            <option value="pro">Pro</option>
-                            <option value="elite">Elite</option>
-                        </select>
-                    </div>
-
-                    <div class="form-elem column gap-10">
-                        <span class="text">Select your goals*</span>
-                        
-                        <div class="row gap-10 check-input">
-                            <input type="checkbox" name="weight-loss" id="weight-loss" class="input">
-                            <label for="weight-loss">Weight Loss</label>
-                        </div>
-                        
-                        <div class="row gap-10 check-input">
-                            <input type="checkbox" name="muscle-gain" id="muscle-gain" class="input">
-                            <label for="muscle-gain">Muscle Gain</label>
-                        </div>
-                        
-                        <div class="row gap-10 check-input">
-                            <input type="checkbox" name="calisthenics" id="calisthenics" class="input">
-                            <label for="calisthenics">Calisthenics</label>
-                        </div>
-                    </div>
+            <div
+                class="border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+                <p>© 2025 Elite Fitness. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a class="hover:text-gray-400 transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-gray-400 transition-colors" href="#">Terms of Service</a>
                 </div>
-                
-                <div class="block column gap-10">
-                    <div class="form-elem column gap-10">
-                        <label for="name">Your name*</label>
-                        <input required type="text" name="name" id="name" class="input" placeholder="e.g., John Doe">
-                    </div>
-                    
-                    <div class="form-elem column gap-10">
-                        <label for="email">Your email*</label>
-                        <input required type="email" name="email" id="email" class="input" placeholder="johndoe@example.com">
-                    </div>
-                    
-                    <div class="form-elem column gap-10">
-                        <label for="phone">Your number*</label>
-                        <input required type="tel" name="phone" id="phone" class="input" placeholder="+91 98765 12345">
-                    </div>
-
-                    <button type="submit" class="btn fl">Apply now</button>
-                </div>
-            </form>
-        </section>
-
-        <section class="faqs column gap-10 v-center">
-            <h1 class="h1">Frequently asked questions</h1>
-
-            <ul class="list column gap-10">
-                <li>
-                    <details>
-                        <summary class="row h-sb gap-20">
-                            <span class="text">How quickly will I see results?</span>
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/expand.png') }}" alt="Expand more" class="icon">
-                        </summary>
-                        <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, odio!</p>
-                    </details>
-                </li>
-
-                <li>
-                    <details>
-                        <summary class="row h-sb gap-20">
-                            <span class="text">Do I need a gym membership?</span>
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/expand.png') }}" alt="Expand more" class="icon">
-                        </summary>
-                        <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, odio!</p>
-                    </details>
-                </li>
-
-                <li>
-                    <details>
-                        <summary class="row h-sb gap-20">
-                            <span class="text">How do the check-ins work?</span>
-                            <img src="{{ url_for('static', filename='assets/projects/landing-page-01/expand.png') }}" alt="Expand more" class="icon">
-                        </summary>
-                        <p class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, odio!</p>
-                    </details>
-                </li>
-            </ul>
-        </section>
-
-        <section class="cta column v-center gap-20">
-            <h1 class="h1">Ready to build your best self?</h1>
-            <p class="para">Stop waiting for 'the right time'. The right time is now. Apply for coaching today and let's start building the strong, confident, and healthy body you deserve.</p>
-            <a href="#signup-form" class="link btn fl">Apply for coaching</a>
-        </section>
-    </main>
-
-    <script src="{{ url_for('static', filename='js/projects/landing-page-01.js') }}"></script>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
